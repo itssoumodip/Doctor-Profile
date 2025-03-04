@@ -9,32 +9,42 @@ export function TestimonialSlider() {
 
   const testimonials = [
     {
-      name: "Robert Johnson",
-      age: 62,
+      name: "NAME",
+      age: "AGE",
       condition: "Heart Attack Survivor",
       quote:
-        "Dr. Johnson's quick diagnosis and immediate treatment plan saved my life. Her follow-up care has been exceptional, and I'm now back to my normal activities with a healthier heart.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
+        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
       rating: 5,
     },
     {
-      name: "Emily Chen",
-      age: 45,
-      condition: "Hypertension",
+      name: "NAME",
+      age: "AGE",
+      condition: "Heart Attack Survivor",
       quote:
-        "I struggled with high blood pressure for years until I found Dr. Johnson. Her comprehensive approach to treatment, combining medication with lifestyle changes, has finally brought my blood pressure under control.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
+        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
       rating: 5,
     },
     {
-      name: "Michael Rodriguez",
-      age: 58,
-      condition: "Atrial Fibrillation",
+      name: "NAME",
+      age: "AGE",
+      condition: "Heart Attack Survivor",
       quote:
-        "Living with AFib was affecting every aspect of my life. Dr. Johnson took the time to explain my condition and treatment options. With her care, my symptoms have significantly improved.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
+        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
       rating: 5,
     },
+    {
+      name: "NAME",
+      age: "AGE",
+      condition: "Heart Attack Survivor",
+      quote:
+        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
+      rating: 5,
+    }
+   
   ]
 
   const nextSlide = () => {

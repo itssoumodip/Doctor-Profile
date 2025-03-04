@@ -44,86 +44,87 @@ export default function TestimonialsPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <TestimonialCard
-              name="Robert Johnson"
-              age={62}
-              condition="Heart Attack Survivor"
-              quote="Dr. Johnson's quick diagnosis and immediate treatment plan saved my life. Her follow-up care has been exceptional, and I'm now back to my normal activities with a healthier heart."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Emily Chen"
-              age={45}
-              condition="Hypertension"
-              quote="I struggled with high blood pressure for years until I found Dr. Johnson. Her comprehensive approach to treatment, combining medication with lifestyle changes, has finally brought my blood pressure under control."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Michael Rodriguez"
-              age={58}
-              condition="Atrial Fibrillation"
-              quote="Living with AFib was affecting every aspect of my life. Dr. Johnson took the time to explain my condition and treatment options. With her care, my symptoms have significantly improved."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Sarah Thompson"
-              age={39}
-              condition="Congenital Heart Defect"
-              quote="I've been living with a heart defect since birth, and Dr. Johnson is by far the best cardiologist I've ever had. She understands the unique challenges I face and provides personalized care."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="David Wilson"
-              age={70}
-              condition="Heart Failure"
-              quote="When I was diagnosed with heart failure, I was terrified. Dr. Johnson not only provided excellent medical care but also the emotional support I needed. My quality of life has improved dramatically."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Jennifer Lee"
-              age={52}
-              condition="Coronary Artery Disease"
-              quote="Dr. Johnson's preventive approach has helped me manage my coronary artery disease without invasive procedures. Her emphasis on lifestyle changes has made a significant difference in my heart health."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Thomas Brown"
-              age={65}
-              condition="Valve Replacement"
-              quote="Going through heart valve replacement was daunting, but Dr. Johnson's expertise and compassionate care made the process much easier. Her post-surgery care has been outstanding."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="Maria Garcia"
-              age={48}
-              condition="Preventive Care"
-              quote="I sought Dr. Johnson's help for preventive cardiac care due to my family history. Her thorough evaluation and personalized prevention plan have given me peace of mind about my heart health."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
             <TestimonialCard
-              name="James Smith"
-              age={55}
-              condition="Cardiac Rehabilitation"
-              quote="After my bypass surgery, Dr. Johnson's cardiac rehabilitation program was crucial to my recovery. Her team's guidance helped me regain my strength and confidence."
+              name="NAME"
+              age="AGE"
+              condition="MEDICAL CONDITION"
+              quote="PATIENT MESSAGE - lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi"
               image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
+           
           </div>
         </div>
       </section>

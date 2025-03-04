@@ -16,7 +16,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-blue-900 animate-fade-in">
-                  Dr. 
+                  Dr.
                 </h1>
                 <p className="text-blue-600 text-xl md:text-2xl font-medium animate-fade-in animation-delay-200">
                   Cardiologist & Heart Specialist
@@ -188,10 +188,21 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg h-[300px] md:h-[400px] transform transition-all duration-500 hover:shadow-2xl">
-              <div className="w-full h-full bg-gray-200 animate-pulse">
-                {/* This would be replaced with an actual map component */}
-                <div className="w-full h-full flex items-center justify-center text-gray-500">Interactive Map</div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-[300px] md:h-[400px] transform transition-all duration-500 hover:shadow-2xl relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235850.81272997358!2d88.18219084411842!3d22.53534308280847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1741120260956!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Doctor's Office Location"
+                className="w-full h-full"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-3">
+                <p className="font-medium">Dr. Office</p>
+                <p className="text-sm text-gray-600">Kolkata</p>
               </div>
             </div>
           </div>

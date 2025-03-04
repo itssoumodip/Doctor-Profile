@@ -10,7 +10,7 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'], // Include ts and tsx to avoid breaking existing files
   images: {
-    domains: ['placekitten.com', 'images.unsplash.com'], // Add any external domains here
+    domains: ['api.mapbox.com', 'images.unsplash.com', 'cdn-icons-png.flaticon.com'], // Add any external domains here
     dangerouslyAllowSVG: true, // Allow SVG images
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   }

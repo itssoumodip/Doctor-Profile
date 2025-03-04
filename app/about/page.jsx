@@ -39,33 +39,32 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900">My Story</h2>
                 <p className="text-gray-600 md:text-lg">
-                  With over 15 years of experience in cardiology, I've dedicated my career to improving heart health and
-                  providing compassionate care to my patients. My journey in medicine began with a passion for helping
-                  others and has evolved into a specialized practice focused on preventive cardiology and advanced
-                  cardiac treatments.
+                  lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat
                 </p>
                 <p className="text-gray-600 md:text-lg mt-4">
-                  I believe in a patient-centered approach that combines the latest medical advancements with
-                  personalized care. Every patient deserves to be heard, understood, and treated with respect and
-                  dignity.
+                  lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 </p>
                 <p className="text-gray-600 md:text-lg mt-4">
-                  When I'm not in the clinic, I enjoy hiking, reading medical journals, and spending time with my
-                  family. I also regularly participate in community health initiatives and medical missions.
+                  lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 mt-4">
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  Board Certified
+                  ACHIVMENT
                 </span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  Harvard Medical School
+                  ACHIVMENT
                 </span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  American Heart Association
+                  ACHIVMENT
                 </span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  Research Published
+                  ACHIVMENT
                 </span>
               </div>
             </div>
@@ -95,20 +94,20 @@ export default function AboutPage() {
                     year: "DATE",
                     title: "DEGREE",
                     institution: "INSTITUTION",
-                    description: "DESCRIPTION",
+                    description: "DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ",
                   },
                   {
                     year: "DATE",
                     title: "DEGREE",
                     institution: "INSTITUTION",
-                    description: "DESCRIPTION",
+                    description: "DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ",
                   },
                   {
                     year: "DATE",
                     title: "DEGREE",
                     institution: "INSTITUTION",
-                    description: "DESCRIPTION",
-                  },
+                    description: "DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut ",
+                  }
                 ]}
               />
             </div>
@@ -122,7 +121,7 @@ export default function AboutPage() {
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">NAME</h4>
-                      <p className="text-gray-600">DESCRIPTION</p>
+                      <p className="text-gray-600">DESCRIPTION - Lorem ipsum dolor sit amet </p>
                     </div>
                   </div>
                 </li>
@@ -131,7 +130,7 @@ export default function AboutPage() {
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">NAME</h4>
-                      <p className="text-gray-600">DESCRIPTION</p>
+                      <p className="text-gray-600">DESCRIPTION - Lorem ipsum dolor sit amet</p>
                     </div>
                   </div>
                 </li>
@@ -140,7 +139,7 @@ export default function AboutPage() {
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">NAME</h4>
-                      <p className="text-gray-600">DESCRIPTION</p>
+                      <p className="text-gray-600">DESCRIPTION - Lorem ipsum dolor sit amet</p>
                     </div>
                   </div>
                 </li>
@@ -149,7 +148,7 @@ export default function AboutPage() {
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">NAME</h4>
-                      <p className="text-gray-600">DESCRIPTION</p>
+                      <p className="text-gray-600">DESCRIPTION - Lorem ipsum dolor sit amet</p>
                     </div>
                   </div>
                 </li>
@@ -179,7 +178,7 @@ export default function AboutPage() {
               </h4>
               <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                DESCRIPTION
+                DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-200">
@@ -192,7 +191,7 @@ export default function AboutPage() {
               </h4>
               <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                DESCRIPTION
+                DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-200">
@@ -205,7 +204,7 @@ export default function AboutPage() {
               </h4>
               <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                DESCRIPTION
+                DESCRIPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
               </p>
             </div>
           </div>

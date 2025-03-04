@@ -5,6 +5,17 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { SocialIcon } from "@/components/social-icon"
+import dynamic from 'next/dynamic'
+
+// Use dynamic import to avoid SSR issues with Leaflet
+const ContactMap = dynamic(() => import('@/components/ContactMap'), { 
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gray-200 animate-pulse">
+      <div className="w-full h-full flex items-center justify-center text-gray-500">Loading Map...</div>
+    </div>
+  )
+})
 
 export default function ContactPage() {
   return (
@@ -184,10 +195,7 @@ export default function ContactPage() {
                 </Button>
               </form>
               <div className="rounded-xl overflow-hidden shadow-lg h-[300px] animate-fade-in animation-delay-400">
-                <div className="w-full h-full bg-gray-200 animate-pulse">
-                  {/* This would be replaced with an actual map component */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">Interactive Map</div>
-                </div>
+                <ContactMap location={{ lat: 22.5726, lng: 88.3639 }} />
               </div>
             </div>
           </div>
@@ -208,56 +216,62 @@ export default function ContactPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
             <div className="space-y-6 animate-fade-in animation-delay-300">
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">Do you accept new patients?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  Yes, Dr. Johnson is currently accepting new patients. You can schedule an appointment through our
-                  online booking system or by calling our office.
+                  ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">What insurance plans do you accept?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  We accept most major insurance plans, including Blue Cross Blue Shield, Aetna, Cigna,
-                  UnitedHealthcare, Medicare, and Medicaid. Please contact our office to verify your specific insurance
-                  coverage.
+                  ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">How do I prepare for my first appointment?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  Please arrive 15 minutes early to complete necessary paperwork. Bring your insurance card, photo ID, a
-                  list of current medications, and any relevant medical records or test results.
+                  ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
+             
             </div>
             <div className="space-y-6 animate-fade-in animation-delay-400">
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">What is your cancellation policy?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  We request at least 24 hours notice for cancellations or rescheduling. This allows us to offer the
-                  appointment time to other patients who may need urgent care.
+                ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">Do you offer telemedicine appointments?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  Yes, we offer telemedicine appointments for certain types of consultations and follow-up visits.
-                  Please call our office to determine if your visit is appropriate for telemedicine.
+                ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-blue-800">How quickly can I get an appointment?</h3>
+                <h3 className="text-xl font-bold text-blue-800">QESTION</h3>
                 <p className="text-gray-600">
-                  Appointment availability varies based on the type of visit and urgency. We strive to accommodate
-                  urgent cardiac concerns within 24-48 hours. Routine appointments are typically scheduled within 1-2
-                  weeks.
+                ANSWER - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eget nunc
+                  fringilla. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies
+                  nunc. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc.
                 </p>
               </div>
+              
             </div>
           </div>
           <div className="flex justify-center mt-8 animate-fade-in animation-delay-500">
             <Button className="bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300">
-              <Link href="/faq">View All FAQs</Link>
+              <Link href="/">View All FAQs</Link>
             </Button>
           </div>
         </div>
