@@ -16,7 +16,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-blue-900 animate-fade-in">
-                  Dr. Sarah Johnson
+                  Dr. 
                 </h1>
                 <p className="text-blue-600 text-xl md:text-2xl font-medium animate-fade-in animation-delay-200">
                   Cardiologist & Heart Specialist
@@ -49,7 +49,7 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end animate-fade-in animation-delay-500">
               <div className="relative w-[280px] h-[350px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105">
                 <Image
-                  src="/placeholder.svg?height=900&width=700"
+                  src="https://images.unsplash.com/photo-1599493758267-c6c884c7071f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Dr. Sarah Johnson"
                   fill
                   className="object-cover"
@@ -75,7 +75,7 @@ export default function Home() {
               icon={<Users className="h-8 w-8 mb-2 text-blue-600 mx-auto" />}
               value={5000}
               label="Patients Treated"
-              duration={2500}
+              duration={2000}
             />
             <StatCounter
               icon={<Award className="h-8 w-8 mb-2 text-blue-600 mx-auto" />}
@@ -169,7 +169,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Call Us</p>
-                    <p className="text-gray-600">(123) 456-7890</p>
+                    <p className="text-gray-600">(+91) 0000000000</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -178,7 +178,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Visit Us</p>
-                    <p className="text-gray-600">123 Medical Center Dr, Healthcare City</p>
+                    <p className="text-gray-600">Address</p>
                   </div>
                 </div>
               </div>

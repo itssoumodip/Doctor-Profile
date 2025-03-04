@@ -42,7 +42,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Phone</p>
-                    <p className="text-gray-600">(123) 456-7890</p>
+                    <p className="text-gray-600">(+91) 000000000</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Email</p>
-                    <p className="text-gray-600">contact@drjohnson.com</p>
+                    <p className="text-gray-600">gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Address</p>
-                    <p className="text-gray-600">123 Medical Center Dr, Healthcare City, HC 12345</p>
+                    <p className="text-gray-600">kolkata</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">

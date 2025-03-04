@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-900 animate-fade-in">
-              About Dr. Sarah Johnson
+              About Dr.
             </h1>
             <p className="max-w-[700px] text-gray-600 md:text-xl animate-fade-in animation-delay-200">
               Dedicated to excellence in cardiac care and patient well-being
@@ -28,7 +28,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-start animate-fade-in">
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src="/placeholder.svg?height=1000&width=800"
+                  src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Dr. Sarah Johnson"
                   fill
                   className="object-cover"
@@ -92,22 +92,22 @@ export default function AboutPage() {
               <Timeline
                 items={[
                   {
-                    year: "2003-2007",
-                    title: "Doctor of Medicine",
-                    institution: "Harvard Medical School",
-                    description: "Graduated with honors, specializing in cardiovascular medicine",
+                    year: "DATE",
+                    title: "DEGREE",
+                    institution: "INSTITUTION",
+                    description: "DESCRIPTION",
                   },
                   {
-                    year: "2007-2010",
-                    title: "Residency in Internal Medicine",
-                    institution: "Massachusetts General Hospital",
-                    description: "Completed comprehensive training in internal medicine",
+                    year: "DATE",
+                    title: "DEGREE",
+                    institution: "INSTITUTION",
+                    description: "DESCRIPTION",
                   },
                   {
-                    year: "2010-2013",
-                    title: "Fellowship in Cardiology",
-                    institution: "Cleveland Clinic",
-                    description: "Specialized training in advanced cardiac care and procedures",
+                    year: "DATE",
+                    title: "DEGREE",
+                    institution: "INSTITUTION",
+                    description: "DESCRIPTION",
                   },
                 ]}
               />
@@ -121,8 +121,8 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Board Certification in Cardiovascular Disease</h4>
-                      <p className="text-gray-600">American Board of Internal Medicine</p>
+                      <h4 className="font-semibold text-gray-900">NAME</h4>
+                      <p className="text-gray-600">DESCRIPTION</p>
                     </div>
                   </div>
                 </li>
@@ -130,8 +130,8 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Excellence in Cardiac Research Award</h4>
-                      <p className="text-gray-600">American Heart Association, 2018</p>
+                      <h4 className="font-semibold text-gray-900">NAME</h4>
+                      <p className="text-gray-600">DESCRIPTION</p>
                     </div>
                   </div>
                 </li>
@@ -139,8 +139,8 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Top Cardiologist Award</h4>
-                      <p className="text-gray-600">National Medical Association, 2020</p>
+                      <h4 className="font-semibold text-gray-900">NAME</h4>
+                      <p className="text-gray-600">DESCRIPTION</p>
                     </div>
                   </div>
                 </li>
@@ -148,8 +148,8 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Fellowship</h4>
-                      <p className="text-gray-600">American College of Cardiology</p>
+                      <h4 className="font-semibold text-gray-900">NAME</h4>
+                      <p className="text-gray-600">DESCRIPTION</p>
                     </div>
                   </div>
                 </li>
@@ -172,47 +172,46 @@ export default function AboutPage() {
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-200">
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="h-6 w-6 text-blue-700" />
-                <h3 className="font-semibold text-gray-900">Journal Article</h3>
+                <h3 className="font-semibold text-gray-900">Research Paper</h3>
               </div>
               <h4 className="text-lg font-bold text-blue-800 mb-2">
-                Advances in Preventive Cardiology: A Comprehensive Review
+                TITLE
               </h4>
-              <p className="text-gray-600 mb-3">Published in Journal of Cardiology, 2021</p>
+              <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                A comprehensive review of the latest advances in preventive cardiology, focusing on lifestyle
-                interventions and early detection strategies.
+                DESCRIPTION
               </p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-300">
+            <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-200">
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="h-6 w-6 text-blue-700" />
                 <h3 className="font-semibold text-gray-900">Research Paper</h3>
               </div>
               <h4 className="text-lg font-bold text-blue-800 mb-2">
-                The Impact of Telemedicine on Cardiac Patient Outcomes
+                TITLE
               </h4>
-              <p className="text-gray-600 mb-3">Published in Digital Health Journal, 2022</p>
+              <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                An analysis of how telemedicine interventions affect outcomes for patients with various cardiac
-                conditions, with a focus on rural populations.
+                DESCRIPTION
               </p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-400">
+            <div className="bg-gray-50 p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animation-delay-200">
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="h-6 w-6 text-blue-700" />
-                <h3 className="font-semibold text-gray-900">Book Chapter</h3>
+                <h3 className="font-semibold text-gray-900">Research Paper</h3>
               </div>
-              <h4 className="text-lg font-bold text-blue-800 mb-2">Modern Approaches to Heart Failure Management</h4>
-              <p className="text-gray-600 mb-3">Published in Comprehensive Cardiology, 2020</p>
+              <h4 className="text-lg font-bold text-blue-800 mb-2">
+                TITLE
+              </h4>
+              <p className="text-gray-600 mb-3">PUBLISH DATE</p>
               <p className="text-gray-700">
-                A detailed chapter covering the latest treatment protocols and management strategies for patients with
-                heart failure.
+                DESCRIPTION
               </p>
             </div>
           </div>
           <div className="flex justify-center mt-10 animate-fade-in animation-delay-500">
             <Button className="bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300">
-              <Link href="/publications" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2">
                 View All Publications <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -251,7 +250,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-end animate-fade-in animation-delay-200">
               <div className="relative w-full max-w-md h-[300px] overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Doctor's Office"
                   fill
                   className="object-cover"

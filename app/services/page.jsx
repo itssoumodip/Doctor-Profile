@@ -84,7 +84,7 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="w-full py-12 md:py-24 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="container mb-20 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 animate-fade-in">
               Our Care Process
@@ -132,84 +132,6 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-blue-800">Follow-up Care</h3>
               <p className="text-gray-600">Ongoing support and monitoring to ensure optimal heart health</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Insurance Section */}
-      <section className="w-full py-12 md:py-24 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 animate-fade-in">
-              Insurance & Payment
-            </h2>
-            <p className="max-w-[700px] text-gray-600 md:text-xl animate-fade-in animation-delay-200">
-              We work with most major insurance providers to ensure accessible care
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-4 animate-fade-in animation-delay-300">
-              <h3 className="text-xl font-bold text-blue-800">Accepted Insurance Plans</h3>
-              <ul className="grid grid-cols-2 gap-3">
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Blue Cross Blue Shield
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Aetna
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Cigna
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  UnitedHealthcare
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Medicare
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Medicaid
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Humana
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Kaiser Permanente
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4 animate-fade-in animation-delay-400">
-              <h3 className="text-xl font-bold text-blue-800">Payment Options</h3>
-              <p className="text-gray-600">We offer various payment options to accommodate your financial needs:</p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Credit and debit cards
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Health Savings Accounts (HSA)
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Flexible Spending Accounts (FSA)
-                </li>
-                <li className="flex items-center gap-2 text-gray-700">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                  Payment plans for qualifying patients
-                </li>
-              </ul>
-              <p className="text-gray-600 mt-4">
-                Please contact our office for questions regarding insurance coverage or payment options.
-              </p>
             </div>
           </div>
         </div>

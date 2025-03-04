@@ -48,7 +48,7 @@ export default function TestimonialsPage() {
               age={62}
               condition="Heart Attack Survivor"
               quote="Dr. Johnson's quick diagnosis and immediate treatment plan saved my life. Her follow-up care has been exceptional, and I'm now back to my normal activities with a healthier heart."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -57,7 +57,7 @@ export default function TestimonialsPage() {
               age={45}
               condition="Hypertension"
               quote="I struggled with high blood pressure for years until I found Dr. Johnson. Her comprehensive approach to treatment, combining medication with lifestyle changes, has finally brought my blood pressure under control."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -66,7 +66,7 @@ export default function TestimonialsPage() {
               age={58}
               condition="Atrial Fibrillation"
               quote="Living with AFib was affecting every aspect of my life. Dr. Johnson took the time to explain my condition and treatment options. With her care, my symptoms have significantly improved."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
               age={39}
               condition="Congenital Heart Defect"
               quote="I've been living with a heart defect since birth, and Dr. Johnson is by far the best cardiologist I've ever had. She understands the unique challenges I face and provides personalized care."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -84,7 +84,7 @@ export default function TestimonialsPage() {
               age={70}
               condition="Heart Failure"
               quote="When I was diagnosed with heart failure, I was terrified. Dr. Johnson not only provided excellent medical care but also the emotional support I needed. My quality of life has improved dramatically."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -93,7 +93,7 @@ export default function TestimonialsPage() {
               age={52}
               condition="Coronary Artery Disease"
               quote="Dr. Johnson's preventive approach has helped me manage my coronary artery disease without invasive procedures. Her emphasis on lifestyle changes has made a significant difference in my heart health."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -102,7 +102,7 @@ export default function TestimonialsPage() {
               age={65}
               condition="Valve Replacement"
               quote="Going through heart valve replacement was daunting, but Dr. Johnson's expertise and compassionate care made the process much easier. Her post-surgery care has been outstanding."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -111,7 +111,7 @@ export default function TestimonialsPage() {
               age={48}
               condition="Preventive Care"
               quote="I sought Dr. Johnson's help for preventive cardiac care due to my family history. Her thorough evaluation and personalized prevention plan have given me peace of mind about my heart health."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -120,7 +120,7 @@ export default function TestimonialsPage() {
               age={55}
               condition="Cardiac Rehabilitation"
               quote="After my bypass surgery, Dr. Johnson's cardiac rehabilitation program was crucial to my recovery. Her team's guidance helped me regain my strength and confidence."
-              image="/placeholder.svg?height=200&width=200"
+              image="https://cdn-icons-png.flaticon.com/512/149/149071.png"
               rating={5}
               detailed
             />
@@ -133,7 +133,7 @@ export default function TestimonialsPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 animate-fade-in">
-              Video Testimonials
+              Testimonials
             </h2>
             <p className="max-w-[700px] text-gray-600 md:text-xl animate-fade-in animation-delay-200">
               Watch our patients share their experiences
@@ -142,13 +142,13 @@ export default function TestimonialsPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* These would be actual video players in a real implementation */}
             <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md flex items-center justify-center animate-fade-in animation-delay-300">
-              <div className="text-gray-500">Video Testimonial 1</div>
+              <div className="text-gray-500"><img src="https://plus.unsplash.com/premium_photo-1682130157004-057c137d96d5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Ds" alt="1" /></div>
             </div>
             <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md flex items-center justify-center animate-fade-in animation-delay-400">
-              <div className="text-gray-500">Video Testimonial 2</div>
+              <div className="text-gray-500"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="2" /></div>
             </div>
             <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md flex items-center justify-center animate-fade-in animation-delay-500">
-              <div className="text-gray-500">Video Testimonial 3</div>
+              <div className="text-gray-500"><img src="https://plus.unsplash.com/premium_photo-1682145291930-43b73e27446e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="3" /></div>
             </div>
           </div>
         </div>

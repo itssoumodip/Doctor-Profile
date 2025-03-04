@@ -12,10 +12,10 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-blue-900 font-bold text-lg">
-                SJ
+                DR.
               </div>
               <div>
-                <p className="text-lg font-bold">Dr. Sarah Johnson</p>
+                <p className="text-lg font-bold">Dr.</p>
                 <p className="text-xs text-blue-200">Cardiologist</p>
               </div>
             </div>
@@ -82,35 +82,35 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
-                  <p className="text-white">(123) 456-7890</p>
+                  <p className="text-white">(+91) 0000000000</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
-                  <p className="text-white">contact@drjohnson.com</p>
+                  <p className="text-white">email.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
-                  <p className="text-white">123 Medical Center Dr</p>
-                  <p className="text-blue-200">Healthcare City, HC 12345</p>
+                  <p className="text-white">Address</p>
+                  <p className="text-blue-200">Kolkata</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="border-t border-blue-800 mt-10 pt-6 text-center text-blue-200 text-sm">
-          <p>&copy; {new Date().getFullYear()} Dr. Sarah Johnson. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dr. have all rights reserved.</p>
           <div className="flex justify-center gap-4 mt-2">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link href="/accessibility" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Accessibility
             </Link>
           </div>

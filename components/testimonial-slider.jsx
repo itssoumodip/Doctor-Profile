@@ -14,7 +14,7 @@ export function TestimonialSlider() {
       condition: "Heart Attack Survivor",
       quote:
         "Dr. Johnson's quick diagnosis and immediate treatment plan saved my life. Her follow-up care has been exceptional, and I'm now back to my normal activities with a healthier heart.",
-      image: "/placeholder.svg?height=200&width=200",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
       rating: 5,
     },
     {
@@ -23,7 +23,7 @@ export function TestimonialSlider() {
       condition: "Hypertension",
       quote:
         "I struggled with high blood pressure for years until I found Dr. Johnson. Her comprehensive approach to treatment, combining medication with lifestyle changes, has finally brought my blood pressure under control.",
-      image: "/placeholder.svg?height=200&width=200",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
       rating: 5,
     },
     {
@@ -32,7 +32,7 @@ export function TestimonialSlider() {
       condition: "Atrial Fibrillation",
       quote:
         "Living with AFib was affecting every aspect of my life. Dr. Johnson took the time to explain my condition and treatment options. With her care, my symptoms have significantly improved.",
-      image: "/placeholder.svg?height=200&width=200",
+      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", // Changed to a real photo URL
       rating: 5,
     },
   ]
@@ -52,7 +52,7 @@ export function TestimonialSlider() {
     }, 5000)
 
     return () => clearInterval(interval)
-  }, []) // Removed nextSlide from dependencies
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="relative max-w-4xl mx-auto">
@@ -63,7 +63,14 @@ export function TestimonialSlider() {
         >
           {testimonials.map((testimonial, index) => (
             <div key={index} className="w-full flex-shrink-0 px-4">
-              <TestimonialCard {...testimonial} />
+              <TestimonialCard 
+                name={testimonial.name}
+                age={testimonial.age}
+                condition={testimonial.condition}
+                quote={testimonial.quote}
+                image={testimonial.image}
+                rating={testimonial.rating}
+              />
             </div>
           ))}
         </div>
@@ -73,6 +80,7 @@ export function TestimonialSlider() {
         onClick={prevSlide}
         className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white text-blue-700 rounded-full p-2 shadow-md hover:bg-blue-50 transition-colors duration-300 z-10 md:translate-x-0"
         aria-label="Previous testimonial"
+        type="button"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
@@ -81,6 +89,7 @@ export function TestimonialSlider() {
         onClick={nextSlide}
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white text-blue-700 rounded-full p-2 shadow-md hover:bg-blue-50 transition-colors duration-300 z-10 md:translate-x-0"
         aria-label="Next testimonial"
+        type="button"
       >
         <ChevronRight className="h-6 w-6" />
       </button>
@@ -94,6 +103,7 @@ export function TestimonialSlider() {
               index === currentIndex ? "bg-blue-700" : "bg-blue-200"
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
+            type="button"
           />
         ))}
       </div>
