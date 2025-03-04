@@ -7,23 +7,14 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-  experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
-  },
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'], // Include ts and tsx to avoid breaking existing files
 }
 
-mergeConfig(nextConfig, userConfig)
+// Apply user config if available
+if (userConfig && userConfig.default) {
+  mergeConfig(nextConfig, userConfig.default)
+}
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {

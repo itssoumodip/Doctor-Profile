@@ -1,16 +1,20 @@
 "use client"
 
-import { useState, useEffect, type ReactNode } from "react"
+import { useState, useEffect } from "react"
 
-interface StatCounterProps {
-  value: number
-  label: string
-  duration?: number
-  suffix?: string
-  icon?: ReactNode
-}
+/**
+ * @typedef {Object} StatCounterProps
+ * @property {number} value - The target value to count to
+ * @property {string} label - Label describing what the statistic represents
+ * @property {number} [duration=2000] - Duration of counting animation in ms
+ * @property {string} [suffix=""] - Suffix to add after the number (e.g., "%", "+")
+ * @property {React.ReactNode} [icon] - Optional icon to display
+ */
 
-export function StatCounter({ value, label, duration = 2000, suffix = "", icon }: StatCounterProps) {
+/**
+ * @param {StatCounterProps} props
+ */
+export function StatCounter({ value, label, duration = 2000, suffix = "", icon }) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
