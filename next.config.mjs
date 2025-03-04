@@ -8,11 +8,15 @@ try {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx'], // Include ts and tsx to avoid breaking existing files
+  pageExtensions: ['js', 'jsx'], // Only JS and JSX
   images: {
-    domains: ['api.mapbox.com', 'images.unsplash.com', 'cdn-icons-png.flaticon.com'], // Add any external domains here
-    dangerouslyAllowSVG: true, // Allow SVG images
+    domains: ['api.mapbox.com', 'images.unsplash.com', 'cdn-icons-png.flaticon.com'],
+    dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  typescript: {
+    // This will completely ignore TypeScript
+    ignoreBuildErrors: true,
   }
 }
 

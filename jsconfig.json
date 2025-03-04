@@ -1,0 +1,2 @@
+{  "compilerOptions": {    "baseUrl": ".",    "paths": {      "@/*": ["./*"]    },    "jsx": "react-jsx"  },  // In your appointment/page.jsx file, replace:  // import { Button } from "@/components/ui/button"  // with:  //   import { Button } from "../../../components/ui/button"
+}
