@@ -29,7 +29,7 @@ export default function AboutPage() {
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Dr. Sarah Johnson"
+                  alt="Dr. "
                   fill
                   className="object-cover"
                 />

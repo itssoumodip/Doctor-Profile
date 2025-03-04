@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Dr. ",
-  description: "Professional website for Dr. Sarah Johnson, a leading cardiologist with over 15 years of experience in cardiac care."
+  description: "Professional website for Dr. "
 }
 
 export default function RootLayout({ children }) {
