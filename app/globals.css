@@ -61,23 +61,23 @@
 @layer utilities {
   .animate-fade-in {
     opacity: 0;
-    animation: fade-in 0.5s ease-in-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
   }
 
   .animation-delay-200 {
-    animation-delay: 0.2s;
+    animation-delay: 200ms;
   }
 
   .animation-delay-300 {
-    animation-delay: 0.3s;
+    animation-delay: 300ms;
   }
 
   .animation-delay-400 {
-    animation-delay: 0.4s;
+    animation-delay: 400ms;
   }
 
   .animation-delay-500 {
-    animation-delay: 0.5s;
+    animation-delay: 500ms;
   }
 
   .animation-delay-600 {
@@ -93,6 +93,31 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
   }
 }
 
