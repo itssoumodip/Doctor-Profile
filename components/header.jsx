@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation" // Add this import
+import { usePathname } from "next/navigation"
 import { Calendar, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname() // Get current path
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,114 +21,109 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Helper function to determine if a link is active
-  const isActive = (path) => {
-    return pathname === path
-  }
-
-  // Function to get link style based on active state
-  const getLinkStyle = (path) => {
-    return isActive(path) 
-      ? "font-bold text-blue-700" 
-      : "text-gray-700 hover:text-blue-900 font-medium"
-  }
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
+  ]
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4",
-      )}
-    >
-      <div className="container flex items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-lg">
-            DR.
-          </div>
-          <div>
-            <p className="text-lg font-bold text-blue-900">Dr. </p>
-            <p className="text-xs text-gray-600">Cardiologist</p>
-          </div>
-        </Link>
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className={getLinkStyle("/")}>Home</Link>
-          <Link href="/about" className={getLinkStyle("/about")}>About</Link>
-          <Link href="/services" className={getLinkStyle("/services")}>Services</Link>
-          <Link href="/testimonials" className={getLinkStyle("/testimonials")}>Testimonials</Link>
-          <Link href="/contact" className={getLinkStyle("/contact")}>Contact</Link>
-          <Button asChild variant={isActive("/appointment") ? "default" : "default"}>
-            <Link 
-              href="/appointment" 
-              className={`flex items-center gap-2 ${isActive("/appointment") ? "bg-blue-800" : ""}`}
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">
+      <div className="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center p-0.5 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                <span className="text-blue-700 font-bold text-lg">DR</span>
+              </div>
+            </div>
+            <div>
+              <p className="font-bold text-blue-900 text-lg leading-tight">Dr.</p>
+              <p className="text-xs text-blue-600 -mt-1">Cardiologist</p>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center space-x-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="relative px-3 py-2 text-gray-700 hover:text-blue-700 transition-colors duration-200 group"
             >
-              <Calendar className="h-4 w-4" />
-              Book Appointment
+              {item.name}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-          </Button>
+          ))}
         </nav>
-        <button
-          className="md:hidden flex items-center justify-center"
+
+        <div className="hidden lg:flex items-center space-x-4">
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-blue-600 text-blue-700 hover:bg-blue-50"
+          >
+            <Link href="/login">Sign In</Link>
+          </Button>
+          <Button
+            size="sm"
+            className="bg-blue-700 hover:bg-blue-800 text-white"
+          >
+            <Link href="/appointment">Book Appointment</Link>
+          </Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X className="h-6 w-6 text-gray-700" /> : <Menu className="h-6 w-6 text-gray-700" />}
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
+        
+        {/* Mobile Menu Panel */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-20">
+            <div className="container mx-auto px-4 py-3">
+              <nav className="flex flex-col space-y-3 py-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-50 rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <Link 
+                  href="/login"
+                  className="px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-50 rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sign In
+                </Link>
+                <Link 
+                  href="/appointment"
+                  className="flex items-center gap-2 px-3 py-2 bg-blue-700 text-white rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book Appointment
+                </Link>
+              </nav>
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
-          <nav className="container flex flex-col gap-4">
-            <Link
-              href="/"
-              className={getLinkStyle("/")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className={getLinkStyle("/about")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className={getLinkStyle("/services")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/testimonials"
-              className={getLinkStyle("/testimonials")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Testimonials
-            </Link>
-            <Link
-              href="/contact"
-              className={getLinkStyle("/contact")}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Button 
-              asChild
-              variant={isActive("/appointment") ? "default" : "default"}
-            >
-              <Link
-                href="/appointment"
-                className={`flex items-center gap-2 ${isActive("/appointment") ? "bg-blue-800" : ""}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Calendar className="h-4 w-4" />
-                Book Appointment
-              </Link>
-            </Button>
-          </nav>
-        </div>
-      )}
     </header>
   )
 }

@@ -6,20 +6,22 @@ import { StatCounter } from "@/components/stat-counter"
 import { ServiceCard } from "@/components/service-card"
 import { TestimonialSlider } from "@/components/testimonial-slider"
 import { FallbackImage } from "@/components/fallback-image"
+import { ScrollReveal } from "@/components/scroll-reveal"
+import { BackToTopButton } from "@/components/back-to-top-button"
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+    <main className="flex flex-col min-h-screen overflow-hidden">
       <section className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-blue-100 overflow-hidden">
-        {/* Add decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-200 rounded-full opacity-20 -ml-40 -mb-40"></div>
+
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -mr-32 -mt-32 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-200 rounded-full opacity-20 -ml-40 -mb-40 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-blue-300 rounded-full opacity-10 animate-blob animation-delay-3000"></div>
         
         <div className="container px-4 md:px-6 relative z-10">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 w-fit animate-fade-in">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="flex flex-col justify-center space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 w-fit animate-fade-in transform hover:scale-105 transition-transform duration-300">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
@@ -27,69 +29,67 @@ export default function Home() {
                 <span className="text-sm font-medium">Highly Rated Specialist</span>
               </div>
               
-              <div className="space-y-3">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-blue-900 animate-fade-in">
-                  Dr. <span className="text-blue-700">Sarah Mitchell</span>
+              <div className="space-y-4">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600 animate-fade-in">
+                  Dr. <span className="relative inline-block">
+                    <div className="absolute -bottom-1 left-0 w-full h-1 bg-blue-500 rounded-full transform origin-left animate-pulse-slow"></div>
+                  </span>
                 </h1>
                 <p className="text-blue-600 text-xl md:text-2xl font-medium animate-fade-in animation-delay-200">
                   Cardiologist & Heart Specialist
                 </p>
-                <p className="max-w-[600px] text-gray-600 md:text-xl animate-fade-in animation-delay-300">
+                <p className="max-w-[600px] text-gray-600 md:text-xl animate-fade-in animation-delay-300 leading-relaxed">
                   Providing exceptional cardiac care with over 15 years of experience. Dedicated to improving heart
                   health and patient well-being through personalized treatment plans.
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-3 mt-2 animate-fade-in animation-delay-400">
-                <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">
+                <span className="inline-flex items-center rounded-md bg-blue-50 px-3 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20 hover:bg-blue-100 transition-colors duration-300">
                   <Star className="h-3 w-3 mr-1 fill-blue-500 text-blue-500" />
                   Top Rated
                 </span>
-                <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                <span className="inline-flex items-center rounded-md bg-green-50 px-3 py-1.5 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20 hover:bg-green-100 transition-colors duration-300">
                   <Award className="h-3 w-3 mr-1" />
                   Board Certified
                 </span>
-                <span className="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-sm font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">
-                  <Users className="h-3 w-3 mr-1" />
-                  5000+ Patients
-                </span>
-              </div>
+              </div>  {/* Added the missing closing div tag here */}
               
-              <div className="flex flex-col gap-3 min-[400px]:flex-row animate-fade-in animation-delay-400 pt-2">
+              <div className="flex flex-col gap-3 sm:flex-row animate-fade-in animation-delay-500 pt-2">
                 <Button
                   size="lg"
-                  className="bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
                 >
                   <Link href="/appointment" className="flex items-center gap-2">
-                    Book Appointment <Calendar className="h-4 w-4" />
+                    Book Appointment <Calendar className="h-4 w-4 animate-pulse-slow" />
                   </Link>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-blue-700 text-blue-700 hover:bg-blue-50 transition-all duration-300"
+                  className="border-blue-700 text-blue-700 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1"
                 >
                   <Link href="/about" className="flex items-center gap-2">
-                    Learn More <ArrowRight className="h-4 w-4" />
+                    Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>
             </div>
             
             <div className="flex justify-center lg:justify-end animate-fade-in animation-delay-500">
-              <div className="relative w-[280px] h-[350px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105">
+              <div className="relative w-[280px] h-[350px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-2xl shadow-2xl animate-float">
                 {/* Add decorative elements behind image */}
-                <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-400 rounded-full opacity-70 z-0"></div>
-                <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0"></div>
+                <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-400 rounded-full opacity-70 z-0 animate-blob"></div>
+                <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0 animate-blob animation-delay-2000"></div>
                 <Image
                   src="https://images.unsplash.com/photo-1599493758267-c6c884c7071f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Dr. Sarah Mitchell"
+                  alt="Dr."
                   fill
-                  className="object-cover z-10 relative"
+                  className="object-cover z-10 relative transition-transform duration-500 hover:scale-105 hover:rotate-1"
                   priority
                 />
                 {/* Add floating badge */}
-                <div className="absolute bottom-4 right-0 bg-white px-4 py-2 rounded-l-lg shadow-lg z-20">
+                <div className="absolute bottom-4 right-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-l-lg shadow-lg z-20 animate-pulse-slow">
                   <p className="text-blue-700 font-semibold">MD, FACC</p>
                 </div>
               </div>
@@ -106,129 +106,221 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden">
           <svg className="w-full h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                  fill="#EBF5FF" fillOpacity="0.6"></path>
+                  fill="#EBF5FF" fillOpacity="0.8" className="animate-pulse-slow"></path>
           </svg>
         </div>
         
         <div className="container px-4 md:px-6 relative z-10 pt-8">
-          <div className="text-center mb-12">
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Our Impact</span>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-3">
-              Making a <span className="text-blue-700">Difference</span> in Cardiac Care
-            </h2>
-            <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-4"></div>
-            <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg">
-              Our commitment to excellence has helped thousands of patients achieve better heart health
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium inline-block transform transition-transform hover:scale-105 duration-300">Our Impact</span>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600 mt-3">
+                Making a Difference in Cardiac Care
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4"></div>
+              <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg leading-relaxed">
+                Our commitment to excellence has helped thousands of patients achieve better heart health
+              </p>
+            </div>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <StatCounter
-                icon={<Users className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                value={5000}
-                suffix="+"
-                label="Patients Treated"
-                duration={2500}
-              />
-            </div>
+            <ScrollReveal delay={100} animation="animate-slide-up">
+              <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
+                <StatCounter
+                  icon={<Users className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
+                  value={5000}
+                  suffix="+"
+                  label="Patients Treated"
+                  duration={2500}
+                  className="glass-effect"
+                />
+              </div>
+            </ScrollReveal>
             
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <StatCounter
-                icon={<Clock className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                value={15}
-                suffix="+"
-                label="Years of Experience"
-                duration={1500}
-              />
-            </div>
+            <ScrollReveal delay={200} animation="animate-slide-up">
+              <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
+                <StatCounter
+                  icon={<Clock className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
+                  value={15}
+                  suffix="+"
+                  label="Years of Experience"
+                  duration={1500}
+                  className="glass-effect"
+                />
+              </div>
+            </ScrollReveal>
             
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <StatCounter
-                icon={<Award className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                value={12}
-                label="Awards Received"
-                duration={1800}
-              />
-            </div>
+            <ScrollReveal delay={300} animation="animate-slide-up">
+              <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
+                <StatCounter
+                  icon={<Award className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
+                  value={12}
+                  label="Awards Received"
+                  duration={1800}
+                  className="glass-effect"
+                />
+              </div>
+            </ScrollReveal>
             
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <StatCounter
-                icon={<Star className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                value={98}
-                suffix="%"
-                label="Patient Satisfaction"
-                duration={2200}
-              />
-            </div>
+            <ScrollReveal delay={400} animation="animate-slide-up">
+              <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
+                <StatCounter
+                  icon={<Star className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
+                  value={98}
+                  suffix="%"
+                  label="Patient Satisfaction"
+                  duration={2200}
+                  className="glass-effect"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="w-full py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container px-4 md:px-6 relative">
-          {/* Add decorative elements */}
-          <div className="hidden md:block absolute -left-4 top-1/4 w-24 h-24 bg-blue-50 rounded-full opacity-80"></div>
-          <div className="hidden md:block absolute right-10 bottom-10 w-40 h-40 bg-blue-50 rounded-full opacity-60"></div>
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Enhanced decorative elements */}
+        <div className="hidden md:block absolute -left-4 top-1/4 w-24 h-24 bg-blue-100 rounded-full opacity-80 animate-blob blur-xl"></div>
+        <div className="hidden md:block absolute right-10 bottom-10 w-40 h-40 bg-blue-100 rounded-full opacity-60 animate-blob animation-delay-3000 blur-lg"></div>
+        <div className="absolute right-1/4 top-1/3 w-32 h-32 bg-blue-50 rounded-full opacity-40 animate-blob animation-delay-2000 blur-md"></div>
+        <div className="absolute left-1/3 bottom-1/4 w-20 h-20 bg-blue-200 rounded-full opacity-30 animate-pulse-slow"></div>
+        
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        <div className="container px-4 md:px-6 relative z-10">
+          <ScrollReveal threshold={0.1}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16 relative">
+              <div className="flex items-center gap-2 mb-2 transform transition-all duration-300 hover:scale-105">
+                <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+                <span className="px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Our Expertise</span>
+                <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">
+                Comprehensive Services
+              </h2>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
+              <p className="max-w-[700px] text-gray-600 md:text-xl leading-relaxed">
+                Advanced cardiac care services tailored to your specific health needs
+              </p>
+            </div>
+          </ScrollReveal>
           
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 relative">
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Our Expertise</span>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900">Comprehensive Services</h2>
-            <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-2"></div>
-            <p className="max-w-[700px] tSext-gray-600 md:text-xl">
-              Advanced cardiac care services tailored to your specific health needs
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8">
+            <ScrollReveal delay={100} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Cardiac Consultation"
+                  description="Comprehensive evaluation of your heart health with personalized recommendations and long-term care planning."
+                  icon="Heart"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={200} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Echocardiography"
+                  description="Advanced ultrasound imaging to assess heart structure and function with the latest technology and expert interpretation."
+                  icon="Activity"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={300} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Preventive Cardiology"
+                  description="Personalized strategies to prevent heart disease and maintain optimal cardiovascular health for life."
+                  icon="Shield"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="group">
-              <ServiceCard
-                title="Cardiac Consultation"
-                description="Comprehensive evaluation of your heart health with personalized recommendations."
-                icon="Heart"
-                className="h-full border-2 border-transparent hover:border-blue-200 transition-all duration-300 hover:shadow-xl"
-              />
-            </div>
+          {/* Additional services visible only on larger screens */}
+          <div className="hidden xl:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8">
+            <ScrollReveal delay={400} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Cardiac Rehabilitation"
+                  description="Supervised programs to help recover from heart procedures and improve cardiovascular health."
+                  icon="HeartPulse"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
             
-            <div className="group">
-              <ServiceCard
-                title="Echocardiography"
-                description="Advanced ultrasound imaging to assess heart structure and function with the latest technology."
-                icon="Activity"
-                className="h-full border-2 border-transparent hover:border-blue-200 transition-all duration-300 hover:shadow-xl"
-              />
-            </div>
+            <ScrollReveal delay={500} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Heart Failure Management"
+                  description="Comprehensive care for heart failure patients with evidence-based treatments and monitoring."
+                  icon="Stethoscope"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
             
-            <div className="group">
-              <ServiceCard
-                title="Preventive Cardiology"
-                description="Personalized strategies to prevent heart disease and maintain optimal cardiovascular health."
-                icon="Shield"
-                className="h-full border-2 border-transparent hover:border-blue-200 transition-all duration-300 hover:shadow-xl"
-              />
-            </div>
+            <ScrollReveal delay={600} animation="animate-slide-up">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+                <ServiceCard
+                  title="Cardiovascular Risk Assessment"
+                  description="Detailed evaluation of your heart disease risk factors with personalized prevention strategies."
+                  icon="LineChart"
+                  className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
+                  iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                />
+                <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
+              </div>
+            </ScrollReveal>
           </div>
           
           <div className="flex justify-center mt-12">
             <Button
               variant="outline"
-              className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 transition-all duration-300 group"
+              className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 transition-all duration-300 group transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
             >
-              <Link href="/services" className="flex items-center gap-2">
+              <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-md"></span>
+              <Link href="/services" className="flex items-center gap-2 relative z-10">
                 View All Services 
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
+          
+          {/* Mobile view indicator dots - only visible on smaller screens */}
+          <div className="flex justify-center mt-8 gap-1 sm:hidden">
+            <span className="h-2 w-8 rounded-full bg-blue-600"></span>
+            <span className="h-2 w-2 rounded-full bg-blue-200"></span>
+            <span className="h-2 w-2 rounded-full bg-blue-200"></span>
+          </div>
         </div>
+        
+        {/* Floating side element for visual interest */}
+        <div className="hidden lg:block absolute right-0 top-1/4 transform translate-x-1/2 bg-blue-50 w-32 h-32 rounded-full blur-3xl opacity-60 animate-pulse-slow"></div>
       </section>
 
       {/* Feature Highlights */}
       <section className="w-full py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Why Choose Dr. Mitchell</span>
+            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Why Choose Dr.</span>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-3">World-Class Cardiac Care</h2>
             <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-4"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl">
@@ -341,7 +433,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 mt-3">What to Expect</h2>
             <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-4"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg">
-              Your heart health journey with Dr. Mitchell is streamlined and comprehensive
+              Your heart health journey with Dr. is streamlined and comprehensive
             </p>
           </div>
           
@@ -442,7 +534,7 @@ export default function Home() {
             <div className="md:col-span-3 space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Ready to prioritize your heart health?</h2>
               <p className="text-blue-100 max-w-2xl">
-                Take the first step toward a healthier heart today. Schedule a consultation with Dr. Sarah Mitchell for personalized cardiac care.
+                Take the first step toward a healthier heart today. Schedule a consultation with Dr. for personalized cardiac care.
               </p>
             </div>
             <div className="md:col-span-2 flex flex-col sm:flex-row gap-4 justify-end">
@@ -488,7 +580,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Visit Us</p>
-                    <p className="text-gray-600">Address</p>
+                    <p className="text-sm text-gray-600">Kolkata</p>
                   </div>
                 </div>
               </div>
@@ -519,115 +611,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Modern Footer */}
-      <footer className="w-full bg-gradient-to-r from-blue-900 to-blue-950 text-white">
-        {/* Footer Top with curved shape */}
-        <div className="relative h-16">
-          <svg className="absolute bottom-0 w-full h-16" preserveAspectRatio="none" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 74L60 68.7C120 63.3 240 52.7 360 46.5C480 40.3 600 38.7 720 42.2C840 45.7 960 54.3 1080 57.2C1200 60 1320 57 1380 55.5L1440 54V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V74Z" fill="#1e3a8a"/>
-          </svg>
-        </div>
-        
-        {/* Footer Content */}
-        <div className="container px-4 md:px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Column 1: Logo and info */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                  <span className="text-blue-900 font-bold text-xl">SM</span>
-                </div>
-                <h3 className="text-xl font-bold">Dr. Sarah Mitchell</h3>
-              </div>
-              <p className="text-blue-200">Providing exceptional cardiac care with personalized treatment plans for every patient.</p>
-              <div className="flex space-x-4 pt-2">
-                {/* Social Media Icons */}
-                <a href="#" className="w-9 h-9 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fillRule="evenodd" clipRule="evenodd"></path></svg>
-                </a>
-                <a href="#" className="w-9 h-9 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-                </a>
-                <a href="#" className="w-9 h-9 rounded-full bg-blue-800 hover:bg-blue-700 flex items-center justify-center transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"></path></svg>
-                </a>
-              </div>
-            </div>
-            
-            {/* Column 2: Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 border-b border-blue-700 pb-2">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">About Dr. Mitchell</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Our Services</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Patient Reviews</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Insurance Information</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Blog & Articles</a></li>
-              </ul>
-            </div>
-            
-            {/* Column 3: Services */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 border-b border-blue-700 pb-2">Our Services</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Cardiac Consultation</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Echocardiography</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Preventive Cardiology</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Heart Failure Management</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Cardiac Rehabilitation</a></li>
-              </ul>
-            </div>
-            
-            {/* Column 4: Office Hours */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4 border-b border-blue-700 pb-2">Office Hours</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 5:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 2:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-              <div className="pt-4">
-                <a href="#" className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-lg transition-colors">
-                  <Calendar className="h-4 w-4" />
-                  Book Appointment
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          {/* Footer Bottom */}
-          <div className="mt-12 pt-6 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-blue-300">© {new Date().getFullYear()} Dr. Sarah Mitchell Cardiology. All rights reserved.</p>
-            <div className="mt-4 md:mt-0">
-              <ul className="flex space-x-6 text-sm text-blue-300">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Sitemap</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Floating Appointment Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          size="lg"
-          className="bg-blue-700 hover:bg-blue-800 text-white shadow-lg rounded-full p-4 flex items-center gap-2 animate-pulse-slow"
-        >
-          <Calendar className="h-5 w-5" />
-          <span>Book Now</span>
-        </Button>
-      </div>
+      {/* Remove the entire footer section - it will be moved to layout.jsx */}
     </main>
   )
 }

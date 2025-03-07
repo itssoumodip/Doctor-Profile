@@ -97,7 +97,7 @@
 
   @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
   }
 
@@ -112,12 +112,105 @@
     100% { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes blob {
+    0% {
+      transform: scale(1);
+    }
+    33% {
+      transform: scale(1.1) translateY(-10px);
+    }
+    66% {
+      transform: scale(0.9) translateX(10px);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
   .animate-pulse-slow {
-    animation: pulse 4s ease-in-out infinite;
+    animation: pulse-slow 3s infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg, #1e40af, #3b82f6);
+  }
+
+  .section-transition {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .section-transition:hover {
+    transform: scale(1.01);
   }
 }
 
