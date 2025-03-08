@@ -114,10 +114,10 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium inline-block transform transition-transform hover:scale-105 duration-300">Our Impact</span>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600 mt-3">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">
                 Making a Difference in Cardiac Care
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4"></div>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
               <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg leading-relaxed">
                 Our commitment to excellence has helped thousands of patients achieve better heart health
               </p>
