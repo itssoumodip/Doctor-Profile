@@ -12,10 +12,10 @@ import { BackToTopButton } from "@/components/back-to-top-button"
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen overflow-hidden">
-      <section className="relative w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-blue-100 overflow-hidden">
+      <section className="relative w-full py-12 md:py-24 lg:py-32 bg-[#ebf5ffc0] overflow-hidden">
 
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -mr-32 -mt-32 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-200 rounded-full opacity-20 -ml-40 -mb-40 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-200 rounded-full opacity-20 -ml-40 -mb-30 animate-blob animation-delay-4000"></div>
         <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-blue-300 rounded-full opacity-10 animate-blob animation-delay-3000"></div>
         
         <div className="container px-4 md:px-6 relative z-10">
