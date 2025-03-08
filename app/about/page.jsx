@@ -27,7 +27,6 @@ export default function AboutPage() {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-blue-900 animate-fade-in relative">
               About Dr. <span className="text-blue-700 relative inline-block">
-                Johnson
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-blue-200/50 -z-10 rounded-full"></span>
               </span>
             </h1>
@@ -75,14 +74,14 @@ export default function AboutPage() {
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl transform hover:translate-y-[-5px] transition-all duration-500 group">
                 <Image
                   src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Dr. Johnson"
+                  alt="Dr."
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-white font-bold text-xl">Dr. Johnson</h3>
+                  <h3 className="text-white font-bold text-xl">Dr.</h3>
                   <p className="text-white/80 text-sm">Cardiologist & Medical Director</p>
                   <div className="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="bg-blue-600/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">15+ Years Experience</span>
@@ -138,23 +137,25 @@ export default function AboutPage() {
       </section>
 
       {/* Education & Qualifications */}
-      <section id="education" className="w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50/50 relative overflow-hidden">
+      <section id="education" className="w-full py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-100/50 rounded-full opacity-70 filter blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-100/50 rounded-full opacity-70 filter blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-200/50 rounded-full opacity-70 filter blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-200/50 rounded-full opacity-70 filter blur-3xl"></div>
         </div>
 
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16 animate-fade-in">
-            <div className="inline-block p-1.5 px-4 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-2">
-              Professional Background
+            <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Professional Background</span>
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-900 relative inline-block">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">
               Education & Qualifications
-              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             </h2>
-            <p className="max-w-[700px] text-gray-600 md:text-xl mt-4">
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
+            <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl mt-4">
               Academic excellence and continuous professional development in cardiac care
             </p>
           </div>
@@ -458,6 +459,91 @@ export default function AboutPage() {
                   <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse delay-150"></span>
                   <span className="h-2 w-2 rounded-full bg-white/70 animate-pulse delay-300"></span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="w-full py-16 md:py-20 bg-gradient-to-b from-white to-blue-50 border-t border-blue-100/50">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4 animate-fade-in">
+                <div className="flex items-center gap-2 mb-2 justify-start transform transition-all duration-300 hover:scale-105">
+                  <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+                  <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">
+                    <span className="relative flex h-2 w-2 mr-1.5 inline-block">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Stay Informed
+                  </span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-blue-900 leading-tight md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">Heart Health Newsletter</h3>
+                <div className="w-20 h-1 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mb-4"></div>
+                
+                <p className="text-gray-600 md:text-lg">
+                  Get the latest cardiac health tips, research updates, and heart-healthy recipes delivered directly to your inbox.
+                </p>
+                
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Monthly health insights from our specialists
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Early access to cardiac health webinars
+                  </li>
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Heart-healthy recipes and lifestyle tips
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-blue-100/50 transform transition-all hover:shadow-xl animate-fade-in animation-delay-200">
+                <form className="space-y-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium text-gray-700">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-all"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-all"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-lg py-3 px-4 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
+                    >
+                      Subscribe Now
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                  <p className="text-xs text-gray-500 text-center mt-3">
+                    We respect your privacy. You can unsubscribe at any time.
+                  </p>
+                </form>
               </div>
             </div>
           </div>

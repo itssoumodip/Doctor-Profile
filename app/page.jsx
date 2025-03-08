@@ -113,12 +113,16 @@ export default function Home() {
         <div className="container px-4 md:px-6 relative z-10 pt-8">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium inline-block transform transition-transform hover:scale-105 duration-300">Our Impact</span>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">
+              <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
+                <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+                <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Our Impact</span>
+                <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x pb-3 leading-tight">
                 Making a Difference in Cardiac Care
               </h2>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
-              <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg leading-relaxed">
+              <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
+              <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg leading-relaxed mt-3">
                 Our commitment to excellence has helped thousands of patients achieve better heart health
               </p>
             </div>
@@ -180,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
         {/* Enhanced decorative elements */}
         <div className="hidden md:block absolute -left-4 top-1/4 w-24 h-24 bg-blue-100 rounded-full opacity-80 animate-blob blur-xl"></div>
         <div className="hidden md:block absolute right-10 bottom-10 w-40 h-40 bg-blue-100 rounded-full opacity-60 animate-blob animation-delay-3000 blur-lg"></div>
@@ -317,12 +321,17 @@ export default function Home() {
       </section>
 
       {/* Feature Highlights */}
-      <section className="w-full py-16 bg-gray-50">
+      <section className="w-full py-16 bg-blue-50/70">
         <div className="container px-4 md:px-6">
+          {/* Why Choose Dr. - Updated Header */}
           <div className="text-center mb-12">
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Why Choose Dr.</span>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-3">World-Class Cardiac Care</h2>
-            <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-4"></div>
+            <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Why Choose Dr.</span>
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-2">World-Class Cardiac Care</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl">
               Experience the difference with personalized, evidence-based heart care
             </p>
@@ -361,13 +370,13 @@ export default function Home() {
             </div>
             
             {/* Feature 2 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-purple-600 group hover:-translate-y-2">
-              <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors duration-300">
-                <svg className="w-7 h-7 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-blue-600 group hover:-translate-y-2">
+              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                <svg className="w-7 h-7 text-blue-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-purple-900">Advanced Technology</h3>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">Advanced Technology</h3>
               <p className="text-gray-600">Access to the latest diagnostic and treatment technologies for optimal heart care.</p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center">
@@ -392,13 +401,13 @@ export default function Home() {
             </div>
             
             {/* Feature 3 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-teal-600 group hover:-translate-y-2">
-              <div className="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal-600 transition-colors duration-300">
-                <svg className="w-7 h-7 text-teal-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-blue-600 group hover:-translate-y-2">
+              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                <svg className="w-7 h-7 text-blue-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-900">Evidence-Based Care</h3>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">Evidence-Based Care</h3>
               <p className="text-gray-600">All treatments follow the latest clinical research and cardiac care guidelines.</p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center">
@@ -428,10 +437,15 @@ export default function Home() {
       {/* Patient Journey Section */}
       <section className="w-full py-16 bg-white overflow-hidden">
         <div className="container px-4 md:px-6">
+          {/* Your Care Journey - Updated Header */}
           <div className="text-center mb-12">
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Your Care Journey</span>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 mt-3">What to Expect</h2>
-            <div className="w-20 h-1 bg-blue-700 rounded-full mx-auto my-4"></div>
+            <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Your Care Journey</span>
+              <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 mt-2">What to Expect</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg">
               Your heart health journey with Dr. is streamlined and comprehensive
             </p>
@@ -492,7 +506,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Preview */}
-      <section className="w-full py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
+      <section className="w-full py-16 md:py-24 bg-gradient-to-r from-blue-700 to-blue-800 text-white relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
@@ -503,10 +517,15 @@ export default function Home() {
         </div>
 
         <div className="container px-4 md:px-6 relative z-10">
+          {/* Real Experiences - Updated Header */}
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <span className="px-3 py-1 rounded-full bg-white bg-opacity-20 text-white text-sm font-medium">Real Experiences</span>
+            <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
+              <span className="h-px w-8 bg-white opacity-60 hidden sm:block"></span>
+              <span className="px-3 py-1 rounded-full bg-white bg-opacity-20 text-white text-sm font-medium shadow-sm">Real Experiences</span>
+              <span className="h-px w-8 bg-white opacity-60 hidden sm:block"></span>
+            </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Voice of Our Patients</h2>
-            <div className="w-20 h-1 bg-white opacity-60 rounded-full mx-auto my-2"></div>
+            <div className="w-24 h-1.5 bg-white opacity-60 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] text-blue-100 md:text-xl">
               Discover what our patients say about their journey to better heart health
             </p>
@@ -528,7 +547,7 @@ export default function Home() {
       </section>
 
       {/* Add a new CTA section before the end of main */}
-      <section className="w-full py-16 bg-gradient-to-r from-blue-700 to-blue-800 text-white">
+      <section className="w-full py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-3 space-y-4">
