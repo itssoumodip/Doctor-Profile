@@ -90,7 +90,7 @@ export default function Home() {
                 />
                 {/* Add floating badge */}
                 <div className="absolute bottom-4 right-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-l-lg shadow-lg z-20 animate-pulse-slow">
-                  <p className="text-blue-700 font-semibold">MD, FACC</p>
+                  <p className="text-blue-700 font-semibold">Dr. </p>
                 </div>
               </div>
             </div>
