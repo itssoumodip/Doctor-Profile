@@ -76,7 +76,7 @@ export function Header() {
           <div className="hidden lg:flex items-center space-x-4 flex-shrink-0">
             <Button
               size="sm"
-              className="bg-blue-700 hover:bg-blue-800 text-white transition-transform duration-200 hover:scale-105"
+              className="bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               <Link href="/appointment" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
