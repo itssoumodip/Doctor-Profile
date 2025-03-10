@@ -6,7 +6,7 @@ import { Header } from "@/components/header"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Dr. Sarah Mitchell | Cardiologist",
+  title: "Dr.",
   description: "Expert cardiac care with personalized treatment plans for your heart health needs",
 }
 
