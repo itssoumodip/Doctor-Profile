@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { usePathname } from "next/navigation"
 import ErrorSuppressor from "@/components/ErrorSuppressor"
+import { AdminAuthProvider } from "@/lib/adminAuth"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <ErrorSuppressor />
-        {!isAdminRoute && <Header />}
-        {children}
-        {!isAdminRoute && <Footer />}
+        <AdminAuthProvider>
+          {!isAdminRoute && <Header />}
+          {children}
+          {!isAdminRoute && <Footer />}
+        </AdminAuthProvider>
       </body>
     </html>
   )

@@ -191,7 +191,9 @@ export default function AppointmentsPage() {
     if (!appointmentToReject) return
 
     try {
+      console.log('Attempting to reject appointment:', appointmentToReject.id)
       const result = await rejectAppointment(appointmentToReject.id, rejectionReason)
+      console.log('Rejection result:', result)
       
       if (result.success) {
         setAppointments(prev => 
@@ -203,10 +205,11 @@ export default function AppointmentsPage() {
         )
         
         let successMessage = 'Appointment rejected successfully'
-        if (result.emailSent) {
+        if (result.emailSent === true) {
           successMessage += '. Notification email sent to patient.'
-        } else if (!result.emailSent) {
-          successMessage += '. Warning: Notification email failed to send.'
+        } else {
+          successMessage += '. Warning: Notification email may not have been sent.'
+          console.warn('Email sending issue:', result.emailError || 'Unknown reason')
         }
         
         toast({

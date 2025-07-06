@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { useToast } from '@/components/ui/use-toast'
 import { Toaster } from '@/components/ui/toaster'
 import { useForm } from 'react-hook-form'
+import { useAdminAuth } from '@/lib/adminAuth'
 import { 
   User, 
   UserPlus, 
@@ -20,12 +21,9 @@ import {
   Mail,
   Calendar
 } from 'lucide-react'
-import { 
-  getAllAdmins, 
-  createAdmin, 
-  updateAdminStatus, 
-  deleteAdmin 
-} from '@/lib/firebaseOperations'
+
+import { doc, collection, query, getDocs, updateDoc, deleteDoc, where } from 'firebase/firestore'
+import { db } from '@/lib/firebase'
 
 export default function AdminManagementPage() {
   const [admins, setAdmins] = useState([])
@@ -35,6 +33,7 @@ export default function AdminManagementPage() {
   const [adminToDelete, setAdminToDelete] = useState(null)
   const { toast } = useToast()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
+  const { createAdmin, currentUser } = useAdminAuth()
 
   useEffect(() => {
     fetchAdmins()
@@ -43,22 +42,24 @@ export default function AdminManagementPage() {
   const fetchAdmins = async () => {
     try {
       setLoading(true)
-      const result = await getAllAdmins()
-      if (result.success) {
-        setAdmins(result.data)
-      } else {
-        toast({
-          title: "Error",
-          description: "Failed to fetch admins",
-          variant: "destructive",
-          duration: 5000,
-        })
-      }
+      const adminsRef = collection(db, 'admins')
+      const adminsSnapshot = await getDocs(adminsRef)
+      const adminsList = adminsSnapshot.docs.map(doc => {
+        const data = doc.data()
+        // Convert Firestore Timestamps to JavaScript Dates
+        return {
+          id: doc.id,
+          ...data,
+          createdAt: data.createdAt?.toDate(),
+          updatedAt: data.updatedAt?.toDate()
+        }
+      })
+      setAdmins(adminsList)
     } catch (error) {
       console.error('Error fetching admins:', error)
       toast({
         title: "Error",
-        description: "An error occurred while fetching admins",
+        description: "Failed to fetch admins",
         variant: "destructive",
         duration: 5000,
       })
@@ -69,13 +70,14 @@ export default function AdminManagementPage() {
 
   const onSubmitAdmin = async (data) => {
     try {
-      const adminData = {
-        ...data,
+      const result = await createAdmin({
+        email: data.email,
+        password: data.password,
+        fullName: data.fullName,
         role: 'admin',
-        permissions: ['view_appointments', 'manage_appointments', 'manage_messages'],
-      }
+        permissions: ['admin']
+      })
       
-      const result = await createAdmin(adminData)
       if (result.success) {
         toast({
           title: "Success",
@@ -107,28 +109,20 @@ export default function AdminManagementPage() {
   const handleStatusToggle = async (adminId, currentStatus) => {
     try {
       const newStatus = !currentStatus
-      const result = await updateAdminStatus(adminId, newStatus)
-      if (result.success) {
-        setAdmins(prev => 
-          prev.map(admin => 
-            admin.id === adminId 
-              ? { ...admin, isActive: newStatus }
-              : admin
-          )
+      const adminDoc = doc(db, 'admins', adminId)
+      await updateDoc(adminDoc, { isActive: newStatus })
+      setAdmins(prev => 
+        prev.map(admin => 
+          admin.id === adminId 
+            ? { ...admin, isActive: newStatus }
+            : admin
         )
-        toast({
-          title: "Success",
-          description: `Admin ${newStatus ? 'activated' : 'deactivated'} successfully`,
-          duration: 3000,
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: "Failed to update admin status",
-          variant: "destructive",
-          duration: 5000,
-        })
-      }
+      )
+      toast({
+        title: "Success",
+        description: `Admin ${newStatus ? 'activated' : 'deactivated'} successfully`,
+        duration: 3000,
+      })
     } catch (error) {
       console.error('Error updating admin status:', error)
       toast({
@@ -140,26 +134,55 @@ export default function AdminManagementPage() {
     }
   }
 
+  const updateAdminStatus = async (adminId, newStatus) => {
+    try {
+      // Don't allow deactivating yourself
+      if (adminId === currentUser?.uid) {
+        toast({
+          title: "Error",
+          description: "You cannot deactivate your own account",
+          variant: "destructive",
+          duration: 5000,
+        })
+        return
+      }
+
+      const adminRef = doc(db, 'admins', adminId)
+      await updateDoc(adminRef, {
+        isActive: newStatus,
+        updatedAt: new Date()
+      })
+
+      toast({
+        title: "Success",
+        description: `Admin status ${newStatus ? 'activated' : 'deactivated'} successfully`,
+        duration: 3000,
+      })
+
+      fetchAdmins()
+    } catch (error) {
+      console.error('Error updating admin status:', error)
+      toast({
+        title: "Error",
+        description: "Failed to update admin status",
+        variant: "destructive",
+        duration: 5000,
+      })
+    }
+  }
+
   const handleDelete = async () => {
     if (!adminToDelete) return
 
     try {
-      const result = await deleteAdmin(adminToDelete.id)
-      if (result.success) {
-        setAdmins(prev => prev.filter(admin => admin.id !== adminToDelete.id))
-        toast({
-          title: "Success",
-          description: "Admin deleted successfully",
-          duration: 3000,
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: "Failed to delete admin",
-          variant: "destructive",
-          duration: 5000,
-        })
-      }
+      const adminDoc = doc(db, 'admins', adminToDelete.id)
+      await deleteDoc(adminDoc)
+      setAdmins(prev => prev.filter(admin => admin.id !== adminToDelete.id))
+      toast({
+        title: "Success",
+        description: "Admin deleted successfully",
+        duration: 3000,
+      })
     } catch (error) {
       console.error('Error deleting admin:', error)
       toast({
@@ -174,6 +197,53 @@ export default function AdminManagementPage() {
     }
   }
 
+  const deleteAdminUser = async (adminId) => {
+    try {
+      // Don't allow deleting yourself
+      if (adminId === currentUser?.uid) {
+        toast({
+          title: "Error",
+          description: "You cannot delete your own account",
+          variant: "destructive",
+          duration: 5000,
+        })
+        return
+      }
+
+      const adminRef = doc(db, 'admins', adminId)
+      await deleteDoc(adminRef)
+
+      toast({
+        title: "Success",
+        description: "Admin user deleted successfully",
+        duration: 3000,
+      })
+
+      setShowDeleteDialog(false)
+      setAdminToDelete(null)
+      fetchAdmins()
+    } catch (error) {
+      console.error('Error deleting admin:', error)
+      toast({
+        title: "Error",
+        description: "Failed to delete admin user",
+        variant: "destructive",
+        duration: 5000,
+      })
+    }
+  }
+
+  const formatDate = (date) => {
+    if (!date) return 'N/A';
+    return date.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
   if (loading) {
     return (
       <div className="container mx-auto p-6">
@@ -186,107 +256,71 @@ export default function AdminManagementPage() {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <h1 className="text-3xl font-bold">Admin Management</h1>
-          <p className="text-gray-600">Manage admin users and their permissions</p>
-        </div>
-        <Button onClick={() => setShowAddDialog(true)} className="flex items-center gap-2">
-          <UserPlus className="h-4 w-4" />
-          Add Admin
-        </Button>
-      </div>
-
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5" />
-            Admin Users ({admins.length})
-          </CardTitle>
-          <CardDescription>
-            Manage administrator accounts and their access permissions
-          </CardDescription>
+          <div className="flex justify-between items-center">
+            <CardTitle>Admin Management</CardTitle>
+            <Button onClick={() => setShowAddDialog(true)}>
+              <UserPlus className="mr-2" />
+              Add Admin
+            </Button>
+          </div>
+          <CardDescription>Manage admin users and their access</CardDescription>
         </CardHeader>
         <CardContent>
-          {admins.length === 0 ? (
-            <div className="text-center py-8">
-              <User className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-500 mb-4">No admin users found</p>
-              <Button onClick={() => setShowAddDialog(true)}>
-                <UserPlus className="h-4 w-4 mr-2" />
-                Add First Admin
-              </Button>
-            </div>
+          {loading ? (
+            <div className="text-center py-4">Loading...</div>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead>Email</TableHead>
-                  <TableHead>Role</TableHead>
-                  <TableHead>Status</TableHead>
                   <TableHead>Created</TableHead>
-                  <TableHead>Actions</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {admins.map((admin) => (
                   <TableRow key={admin.id}>
-                    <TableCell className="font-medium">
-                      {admin.fullName || admin.name || 'N/A'}
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-2">
-                        <Mail className="h-4 w-4 text-gray-400" />
-                        {admin.email}
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Badge variant="outline">
-                        {admin.role || 'Admin'}
-                      </Badge>
-                    </TableCell>
-                    <TableCell>
-                      <Badge variant={admin.isActive ? 'default' : 'secondary'}>
-                        {admin.isActive ? 'Active' : 'Inactive'}
-                      </Badge>
-                    </TableCell>
+                    <TableCell>{admin.fullName}</TableCell>
+                    <TableCell>{admin.email}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-gray-400" />
-                        {admin.createdAt?.toLocaleDateString() || 'N/A'}
+                        {formatDate(admin.createdAt)}
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex items-center gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleStatusToggle(admin.id, admin.isActive)}
-                        >
-                          {admin.isActive ? (
-                            <>
-                              <ShieldOff className="h-4 w-4" />
-                              Deactivate
-                            </>
-                          ) : (
-                            <>
-                              <Shield className="h-4 w-4" />
-                              Activate
-                            </>
-                          )}
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => {
-                            setAdminToDelete(admin)
-                            setShowDeleteDialog(true)
-                          }}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
+                      <Badge variant={admin.isActive ? "success" : "destructive"}>
+                        {admin.isActive ? "Active" : "Inactive"}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => updateAdminStatus(admin.id, !admin.isActive)}
+                        disabled={admin.id === currentUser?.uid}
+                      >
+                        {admin.isActive ? (
+                          <ShieldOff className="h-4 w-4" />
+                        ) : (
+                          <Shield className="h-4 w-4" />
+                        )}
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => {
+                          setAdminToDelete(admin)
+                          setShowDeleteDialog(true)
+                        }}
+                        disabled={admin.id === currentUser?.uid}
+                      >
+                        <Trash2 className="h-4 w-4 text-red-500" />
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))}

@@ -14,7 +14,8 @@ import {
   LogOut,
   Menu,
   X,
-  Shield
+  Shield,
+  Lock
 } from 'lucide-react'
 
 function AdminLayout({ children }) {
@@ -39,6 +40,7 @@ function AdminLayout({ children }) {
     { name: 'Messages', href: '/admin/dashboard/messages', icon: Mail },
     { name: 'Patients', href: '/admin/dashboard/patients', icon: Users },
     { name: 'Admin Users', href: '/admin/dashboard/admins', icon: Shield },
+    { name: 'Permissions Test', href: '/admin/dashboard/permissions-test', icon: Lock },
     { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
   ]
 
@@ -136,9 +138,5 @@ function AdminLayout({ children }) {
 }
 
 export default function DashboardLayout({ children }) {
-  return (
-    <AdminAuthProvider>
-      <AdminLayout>{children}</AdminLayout>
-    </AdminAuthProvider>
-  )
+  return <AdminLayout>{children}</AdminLayout>
 }
