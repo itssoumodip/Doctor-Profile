@@ -67,14 +67,20 @@ export default function AppointmentPage() {
       if (result.success) {
         toast({
           title: "Appointment Booked Successfully!",
-          description: `Your appointment has been scheduled for ${selectedDate} at ${selectedTime}. We'll contact you shortly with confirmation.`,
-          duration: 5000,
+          description: `Your appointment has been scheduled for ${selectedDate} at ${selectedTime}. Redirecting to confirmation page...`,
+          duration: 3000,
         })
         
-        // Reset form after successful submission
+        // Redirect to confirmation page with appointment details
         setTimeout(() => {
-          window.location.href = "/"
-        }, 3000)
+          const params = new URLSearchParams({
+            name: `${data.firstName} ${data.lastName}`,
+            date: selectedDate,
+            time: selectedTime,
+            service: data.reason
+          })
+          window.location.href = `/appointment/confirmation?${params.toString()}`
+        }, 2000)
       } else {
         throw new Error(result.error)
       }

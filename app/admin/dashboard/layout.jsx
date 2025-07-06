@@ -13,7 +13,8 @@ import {
   Settings, 
   LogOut,
   Menu,
-  X
+  X,
+  Shield
 } from 'lucide-react'
 
 function AdminLayout({ children }) {
@@ -37,6 +38,7 @@ function AdminLayout({ children }) {
     { name: 'Appointments', href: '/admin/dashboard/appointments', icon: Calendar },
     { name: 'Messages', href: '/admin/dashboard/messages', icon: Mail },
     { name: 'Patients', href: '/admin/dashboard/patients', icon: Users },
+    { name: 'Admin Users', href: '/admin/dashboard/admins', icon: Shield },
     { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
   ]
 

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
@@ -26,7 +27,9 @@ import {
 import { 
   getAllAppointments, 
   updateAppointmentStatus, 
-  deleteAppointment 
+  deleteAppointment,
+  approveAppointment,
+  rejectAppointment 
 } from '@/lib/firebaseOperations'
 
 export default function AppointmentsPage() {
@@ -38,7 +41,10 @@ export default function AppointmentsPage() {
   const [selectedAppointment, setSelectedAppointment] = useState(null)
   const [showDetailsDialog, setShowDetailsDialog] = useState(false)
   const [showDeleteDialog, setShowDeleteDialog] = useState(false)
+  const [showRejectDialog, setShowRejectDialog] = useState(false)
   const [appointmentToDelete, setAppointmentToDelete] = useState(null)
+  const [appointmentToReject, setAppointmentToReject] = useState(null)
+  const [rejectionReason, setRejectionReason] = useState('')
   const { toast } = useToast()
 
   useEffect(() => {
@@ -98,7 +104,15 @@ export default function AppointmentsPage() {
 
   const handleStatusUpdate = async (appointmentId, newStatus) => {
     try {
-      const result = await updateAppointmentStatus(appointmentId, newStatus)
+      let result
+      
+      // Use the special approve function for approved status to send email
+      if (newStatus === 'approved') {
+        result = await approveAppointment(appointmentId)
+      } else {
+        result = await updateAppointmentStatus(appointmentId, newStatus)
+      }
+      
       if (result.success) {
         setAppointments(prev => 
           prev.map(apt => 
@@ -107,15 +121,23 @@ export default function AppointmentsPage() {
               : apt
           )
         )
+        
+        let successMessage = `Appointment ${newStatus} successfully`
+        if (newStatus === 'approved' && result.emailSent) {
+          successMessage += '. Confirmation email sent to patient.'
+        } else if (newStatus === 'approved' && !result.emailSent) {
+          successMessage += '. Warning: Confirmation email failed to send.'
+        }
+        
         toast({
           title: "Success",
-          description: `Appointment ${newStatus} successfully`,
-          duration: 3000,
+          description: successMessage,
+          duration: 5000,
         })
       } else {
         toast({
           title: "Error",
-          description: "Failed to update appointment status",
+          description: result.error || "Failed to update appointment status",
           variant: "destructive",
           duration: 5000,
         })
@@ -158,6 +180,57 @@ export default function AppointmentsPage() {
       toast({
         title: "Error",
         description: "An error occurred while deleting the appointment",
+        variant: "destructive",
+        duration: 5000,
+      })
+    }
+  }
+
+  // Handle appointment rejection with reason
+  const handleRejectAppointment = async () => {
+    if (!appointmentToReject) return
+
+    try {
+      const result = await rejectAppointment(appointmentToReject.id, rejectionReason)
+      
+      if (result.success) {
+        setAppointments(prev => 
+          prev.map(apt => 
+            apt.id === appointmentToReject.id 
+              ? { ...apt, status: 'rejected' }
+              : apt
+          )
+        )
+        
+        let successMessage = 'Appointment rejected successfully'
+        if (result.emailSent) {
+          successMessage += '. Notification email sent to patient.'
+        } else if (!result.emailSent) {
+          successMessage += '. Warning: Notification email failed to send.'
+        }
+        
+        toast({
+          title: "Success",
+          description: successMessage,
+          duration: 5000,
+        })
+        
+        setShowRejectDialog(false)
+        setAppointmentToReject(null)
+        setRejectionReason('')
+      } else {
+        toast({
+          title: "Error",
+          description: result.error || "Failed to reject appointment",
+          variant: "destructive",
+          duration: 5000,
+        })
+      }
+    } catch (error) {
+      console.error('Error rejecting appointment:', error)
+      toast({
+        title: "Error",
+        description: "An error occurred while rejecting the appointment",
         variant: "destructive",
         duration: 5000,
       })
@@ -314,16 +387,21 @@ export default function AppointmentsPage() {
                             <Button
                               variant="ghost"
                               size="sm"
-                              onClick={() => handleStatusUpdate(appointment.id, 'confirmed')}
+                              onClick={() => handleStatusUpdate(appointment.id, 'approved')}
                               className="text-green-600 hover:text-green-700"
+                              title="Approve Appointment"
                             >
                               <CheckCircle className="h-4 w-4" />
                             </Button>
                             <Button
                               variant="ghost"
                               size="sm"
-                              onClick={() => handleStatusUpdate(appointment.id, 'cancelled')}
-                              className="text-red-600 hover:text-red-700"
+                              onClick={() => {
+                                setAppointmentToReject(appointment)
+                                setShowRejectDialog(true)
+                              }}
+                              className="text-orange-600 hover:text-orange-700"
+                              title="Reject Appointment"
                             >
                               <XCircle className="h-4 w-4" />
                             </Button>
@@ -436,6 +514,56 @@ export default function AppointmentsPage() {
             </Button>
             <Button variant="destructive" onClick={handleDeleteAppointment}>
               Delete
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Reject Appointment Dialog */}
+      <Dialog open={showRejectDialog} onOpenChange={setShowRejectDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Reject Appointment</DialogTitle>
+            <DialogDescription>
+              Please provide a reason for rejecting this appointment. The patient will be notified via email.
+            </DialogDescription>
+          </DialogHeader>
+          {appointmentToReject && (
+            <div className="py-4 space-y-4">
+              <div>
+                <p className="text-sm">
+                  <strong>Patient:</strong> {appointmentToReject.firstName} {appointmentToReject.lastName}
+                </p>
+                <p className="text-sm">
+                  <strong>Date:</strong> {appointmentToReject.appointmentDate} at {appointmentToReject.appointmentTime}
+                </p>
+                <p className="text-sm">
+                  <strong>Service:</strong> {appointmentToReject.reason?.replace('-', ' ')}
+                </p>
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-2 block">
+                  Rejection Reason (Optional)
+                </label>
+                <Textarea
+                  rows={4}
+                  placeholder="Please provide additional information about why this appointment cannot be scheduled at the requested time..."
+                  value={rejectionReason}
+                  onChange={(e) => setRejectionReason(e.target.value)}
+                />
+              </div>
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => {
+              setShowRejectDialog(false)
+              setAppointmentToReject(null)
+              setRejectionReason('')
+            }}>
+              Cancel
+            </Button>
+            <Button variant="destructive" onClick={handleRejectAppointment}>
+              Reject Appointment
             </Button>
           </DialogFooter>
         </DialogContent>

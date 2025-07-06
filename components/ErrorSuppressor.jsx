@@ -2,66 +2,79 @@
 
 import { useEffect } from 'react'
 
+// Immediately suppress errors on module load
+const setupErrorSuppression = () => {
+  // Backup original console methods
+  const originalError = console.error
+  const originalWarn = console.warn
+  const originalLog = console.log
+  
+  const shouldSuppress = (message) => {
+    const msgStr = message?.toString() || ''
+    return (
+      msgStr.includes('hybridaction') ||
+      msgStr.includes('autotrack.studyquicks.com') ||
+      msgStr.includes('chrome-extension') ||
+      msgStr.includes('questionai') ||
+      msgStr.includes('studyquicks') ||
+      msgStr.includes('ERR_BLOCKED_BY_CLIENT') ||
+      msgStr.includes('CONFIGURATION_NOT_FOUND') ||
+      msgStr.includes('Failed to load resource') ||
+      msgStr.includes('net::ERR_BLOCKED_BY_CLIENT') ||
+      msgStr.includes('zybTrackerStatisticsAction') ||
+      msgStr.includes('WAP plat undefined') ||
+      msgStr.includes('WAP plat') ||
+      msgStr.includes('copilot.b68e6a51.js') ||
+      msgStr.includes('main.3b8695ff.js') ||
+      msgStr.includes('sidebar.cc1d36ec.js') ||
+      msgStr.includes('chromeos-questionnaire') ||
+      msgStr.includes('Service is currently unstable') ||
+      msgStr.includes('errNo: -2') ||
+      msgStr.includes('Unexpected end of JSON input') ||
+      msgStr.includes('questionai.com') ||
+      msgStr.includes('hajphibbdloomfdkeoejchiikjggnaif') ||
+      msgStr.includes('googleapis.com/identitytoolkit') ||
+      msgStr.includes('GET http://localhost:3000/hybridaction') ||
+      msgStr.includes('GET https://autotrack.studyquicks.com') ||
+      msgStr.includes('was preloaded using link preload') ||
+      msgStr.includes('FormAssistantStatus') ||
+      msgStr.includes('extension_track') ||
+      msgStr.includes('ISC_004') ||
+      msgStr.includes('ISC_001') ||
+      msgStr.includes('H60_112') ||
+      msgStr.includes('J0C_001') ||
+      msgStr.includes('ets=') ||
+      msgStr.includes('cuid=') ||
+      msgStr.includes('installChannel=store')
+    )
+  }
+  
+  console.error = (...args) => {
+    if (shouldSuppress(args[0])) return
+    originalError.apply(console, args)
+  }
+  
+  console.warn = (...args) => {
+    if (shouldSuppress(args[0])) return
+    originalWarn.apply(console, args)
+  }
+  
+  console.log = (...args) => {
+    if (shouldSuppress(args[0])) return
+    originalLog.apply(console, args)
+  }
+  
+  return { originalError, originalWarn, originalLog }
+}
+
+// Set up suppression immediately
+const originals = setupErrorSuppression()
+
 export default function ErrorSuppressor() {
   useEffect(() => {
-    // Suppress console errors from extensions
-    const originalError = console.error
-    const originalWarn = console.warn
+    // Additional global error handling
     
-    console.error = (...args) => {
-      const message = args[0]?.toString() || ''
-      
-      // Filter out extension-related errors
-      if (
-        message.includes('hybridaction') ||
-        message.includes('autotrack.studyquicks.com') ||
-        message.includes('chrome-extension') ||
-        message.includes('questionai') ||
-        message.includes('studyquicks') ||
-        message.includes('ERR_BLOCKED_BY_CLIENT') ||
-        message.includes('CONFIGURATION_NOT_FOUND') ||
-        message.includes('Failed to load resource') ||
-        message.includes('net::ERR_BLOCKED_BY_CLIENT') ||
-        message.includes('zybTrackerStatisticsAction') ||
-        message.includes('WAP plat undefined') ||
-        message.includes('copilot.b68e6a51.js') ||
-        message.includes('main.3b8695ff.js') ||
-        message.includes('sidebar.cc1d36ec.js') ||
-        message.includes('chromeos-questionnaire') ||
-        message.includes('Service is currently unstable') ||
-        message.includes('errNo: -2') ||
-        message.includes('Unexpected end of JSON input') ||
-        message.includes('questionai.com') ||
-        message.includes('hajphibbdloomfdkeoejchiikjggnaif') ||
-        message.includes('googleapis.com/identitytoolkit')
-      ) {
-        return // Suppress these errors
-      }
-      
-      originalError.apply(console, args)
-    }
-    
-    console.warn = (...args) => {
-      const message = args[0]?.toString() || ''
-      
-      // Filter out extension-related warnings
-      if (
-        message.includes('extension') ||
-        message.includes('chrome-extension') ||
-        message.includes('autotrack') ||
-        message.includes('questionai') ||
-        message.includes('studyquicks') ||
-        message.includes('WAP plat') ||
-        message.includes('copilot.') ||
-        message.includes('zybTracker')
-      ) {
-        return // Suppress these warnings
-      }
-      
-      originalWarn.apply(console, args)
-    }
-    
-    // Suppress global errors
+    // Additional global error handling
     const handleError = (event) => {
       const message = event.message || event.error?.message || ''
       
@@ -74,7 +87,9 @@ export default function ErrorSuppressor() {
         message.includes('WAP plat') ||
         message.includes('copilot.') ||
         message.includes('zybTracker') ||
-        message.includes('errNo: -2')
+        message.includes('errNo: -2') ||
+        message.includes('Service is currently unstable') ||
+        message.includes('hybridaction')
       ) {
         event.preventDefault()
         event.stopPropagation()
@@ -82,9 +97,9 @@ export default function ErrorSuppressor() {
       }
     }
     
-    window.addEventListener('error', handleError, true)
-    window.addEventListener('unhandledrejection', (event) => {
+    const handleUnhandledRejection = (event) => {
       const message = event.reason?.message || event.reason?.toString() || ''
+      const reasonObj = event.reason || {}
       
       if (
         message.includes('chrome-extension') ||
@@ -93,16 +108,24 @@ export default function ErrorSuppressor() {
         message.includes('studyquicks') ||
         message.includes('Service is currently unstable') ||
         message.includes('errNo: -2') ||
-        message.includes('WAP plat')
+        message.includes('WAP plat') ||
+        reasonObj.errNo === -2 ||
+        (reasonObj.errMsg && reasonObj.errMsg.includes('Service is currently unstable'))
       ) {
         event.preventDefault()
+        return false
       }
-    })
+    }
+    
+    window.addEventListener('error', handleError, true)
+    window.addEventListener('unhandledrejection', handleUnhandledRejection, true)
     
     return () => {
-      console.error = originalError
-      console.warn = originalWarn
+      console.error = originals.originalError
+      console.warn = originals.originalWarn
+      console.log = originals.originalLog
       window.removeEventListener('error', handleError, true)
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection, true)
     }
   }, [])
   

@@ -15,6 +15,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <script src="/suppress-errors.js" async />
+      </head>
       <body className={inter.className}>
         <ErrorSuppressor />
         {!isAdminRoute && <Header />}
