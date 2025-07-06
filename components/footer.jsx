@@ -26,26 +26,7 @@ export function Footer() {
       <div className="absolute left-1/4 top-1/3 w-36 h-36 rounded-full bg-blue-800 opacity-10 blur-3xl animate-blob animation-delay-2000"></div>
       <div className="absolute right-1/5 bottom-1/4 w-48 h-48 rounded-full bg-blue-700 opacity-10 blur-3xl animate-blob animation-delay-4000"></div>
       
-      <div className="container px-4 md:px-6 py-12 md:py-16 relative z-10">
-        <div className="max-w-3xl mx-auto mb-16 p-6 rounded-xl bg-gradient-to-r from-blue-800 to-blue-900 shadow-xl relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-30 group-hover:opacity-40 transition-opacity duration-500"></div>
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-center mb-4">Join Our Heart Health Newsletter</h3>
-            <p className="text-blue-100 text-center mb-6">Receive expert advice, health tips, and updates from Dr.</p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-blue-400/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <button className="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Subscribe
-              </button>
-            </div>
-          </div>
-          <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 animate-gradient-x"></div>
-        </div>
-        
+      <div className="container px-4 md:px-6 py-12 md:py-16 relative z-10">  
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="space-y-5 transform transition-all duration-500 hover:-translate-y-1">
             <div className="flex items-center space-x-3">

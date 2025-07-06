@@ -15,16 +15,20 @@ export default function RootLayout({ children }) {
   const isAdminRoute = pathname ? pathname.startsWith('/admin') : false
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script src="/suppress-errors.js" async />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <ErrorSuppressor />
         <AdminAuthProvider>
-          {!isAdminRoute && <Header />}
-          {children}
-          {!isAdminRoute && <Footer />}
+          <div className="flex flex-col min-h-screen w-full mx-auto">
+            {!isAdminRoute && <Header />}
+            <div className="flex-1 w-full mx-auto">
+              {children}
+            </div>
+            {!isAdminRoute && <Footer />}
+          </div>
         </AdminAuthProvider>
       </body>
     </html>

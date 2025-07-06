@@ -56,7 +56,7 @@ export default function TestimonialsPage() {
               <div className="mt-6 flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80" 
+                    src="" 
                     alt="Patient" 
                     className="w-full h-full object-cover"
                   />
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="Michael R." 
                           className="w-full h-full object-cover"
                         />
@@ -141,7 +141,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="Sarah K." 
                           className="w-full h-full object-cover"
                         />
@@ -173,7 +173,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="Robert J." 
                           className="w-full h-full object-cover"
                         />
@@ -205,7 +205,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="Patricia M." 
                           className="w-full h-full object-cover"
                         />
@@ -238,7 +238,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="David L." 
                           className="w-full h-full object-cover"
                         />
@@ -270,7 +270,7 @@ export default function TestimonialsPage() {
                     <div className="mr-4">
                       <div className="w-16 h-16 rounded-full border-2 border-blue-200 overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80" 
+                          src="" 
                           alt="Karen W." 
                           className="w-full h-full object-cover"
                         />

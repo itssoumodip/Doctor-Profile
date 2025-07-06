@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { SocialIcon } from "@/components/social-icon"
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
-import { createContactMessage } from "@/lib/firebaseOperations"
 import dynamic from 'next/dynamic'
 
 // Use dynamic import to avoid SSR issues with Leaflet
@@ -53,7 +52,16 @@ export default function ContactPage() {
         submittedAt: new Date().toISOString()
       }
 
-      const result = await createContactMessage(contactData)
+      // Send email directly instead of storing in Firebase
+      const response = await fetch('/api/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData)
+      })
+      
+      const result = await response.json()
 
       if (result.success) {
         toast({
@@ -72,7 +80,7 @@ export default function ContactPage() {
           message: ''
         })
       } else {
-        throw new Error(result.error)
+        throw new Error(result.error || 'Failed to send message')
       }
     } catch (error) {
       console.error('Error submitting contact form:', error)
