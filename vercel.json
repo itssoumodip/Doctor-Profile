@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm install --legacy-peer-deps && next build",
+  "buildCommand": "node build-fix.js && npm install tailwindcss postcss autoprefixer --legacy-peer-deps && next build",
   "devCommand": "next dev",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": ".next"
