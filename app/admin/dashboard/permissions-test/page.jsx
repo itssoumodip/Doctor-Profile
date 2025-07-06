@@ -9,7 +9,7 @@ import { testFirebasePermissions, createAdmin } from '@/lib/firebaseOperations'
 import { runAllFirebaseTests, getCurrentAuthStatus } from '@/lib/firebaseUtils'
 import { useToast } from '@/components/ui/use-toast'
 import { Toaster } from '@/components/ui/toaster'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs-simple'
 
 export default function FirebasePermissionsTestPage() {
   const [testResult, setTestResult] = useState(null)
