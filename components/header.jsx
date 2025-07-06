@@ -44,7 +44,7 @@ export function Header() {
                 </div>
               </div>
               <div>
-                <p className="font-bold text-blue-900 text-lg leading-tight">Dr.</p>
+                <p className="font-bold text-blue-900 text-lg leading-tight">Dr. Partha Pratim Paul</p>
                 <p className="text-xs text-blue-600 -mt-1">Cardiologist</p>
               </div>
             </Link>

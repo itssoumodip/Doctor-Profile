@@ -22,7 +22,7 @@ import {
 
 export default function SettingsPage() {
   const [doctorInfo, setDoctorInfo] = useState({
-    name: 'Dr. ',
+    name: 'Dr. Partha Pratim Paul',
     specialty: 'Cardiologist & Heart Specialist',
     email: 'doctor@example.com',
     phone: '+1 (555) 123-4567',

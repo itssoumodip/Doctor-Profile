@@ -26,7 +26,7 @@ export default function AboutPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-blue-900 animate-fade-in relative">
-              About Dr. <span className="text-blue-700 relative inline-block">
+              About Dr. Partha Pratim Paul <span className="text-blue-700 relative inline-block">
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-blue-200/50 -z-10 rounded-full"></span>
               </span>
             </h1>
@@ -74,14 +74,14 @@ export default function AboutPage() {
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl transform hover:translate-y-[-5px] transition-all duration-500 group">
                 <Image
                   src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Dr."
+                  alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-white font-bold text-xl">Dr.</h3>
+                  <h3 className="text-white font-bold text-xl">Dr. Partha Pratim Paul</h3>
                   <p className="text-white/80 text-sm">Cardiologist & Medical Director</p>
                   <div className="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="bg-blue-600/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">15+ Years Experience</span>

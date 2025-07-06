@@ -1,6 +1,6 @@
-# Doctor Profile Website
+# Dr. Partha Pratim Paul - Doctor Profile Website
 
-A modern, responsive doctor profile website built with Next.js, Tailwind CSS, and Firebase.
+A modern, responsive doctor profile website for Dr. Partha Pratim Paul built with Next.js, Tailwind CSS, and Firebase.
 
 ## Features
 
@@ -10,6 +10,7 @@ A modern, responsive doctor profile website built with Next.js, Tailwind CSS, an
 - Admin dashboard
 - Patient testimonials
 - Service information
+- Double-booking prevention for appointments
 
 ## Email Configuration
 
@@ -36,6 +37,17 @@ The contact form now uses Nodemailer to send emails directly instead of storing 
    - Enable "Less secure app access" or
    - Create an "App Password" if you have 2FA enabled
 
+### Testing Email Functionality
+
+To verify your email configuration is working properly:
+
+```bash
+# Run the email test script
+node test-contact-email.js
+```
+
+This will send a test email to the address specified in your .env.local file.
+
 ## Development
 
 ```bash
@@ -57,3 +69,20 @@ npm run build
 ```
 
 Remember to set up the environment variables in your deployment platform.
+
+### Vercel Deployment Notes
+
+The project includes a `build-fix.js` script that runs automatically during the build process to ensure all configuration files are properly set up. This script:
+
+1. Ensures Tailwind CSS and related dependencies are installed
+2. Creates JavaScript versions of TypeScript configuration files if needed
+3. Handles compatibility between ESM and CommonJS module formats
+
+When deploying to Vercel, make sure to add all the required environment variables:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_EMAIL`
+- `SMTP_PASSWORD`
+- `CONTACT_RECIPIENT_EMAIL`
+- Firebase configuration variables

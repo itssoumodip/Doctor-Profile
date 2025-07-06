@@ -36,7 +36,7 @@ export function Footer() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white">Dr.</h3>
+              <h3 className="text-xl font-bold text-white">Dr. Partha Pratim Paul</h3>
             </div>
             
             <p className="text-blue-200 leading-relaxed">
@@ -69,7 +69,7 @@ export function Footer() {
               </span>
             </h3>
             <ul className="space-y-2">
-              {['About Dr.', 'Our Services', 'Patient Reviews', 'Insurance Information', 'Blog & Articles'].map((item, index) => (
+              {['About Dr. Partha Pratim Paul', 'Our Services', 'Patient Reviews', 'Insurance Information', 'Blog & Articles'].map((item, index) => (
                 <li key={index} className="transform transition-transform duration-200 hover:translate-x-1">
                   <a href="#" className="text-blue-200 hover:text-white transition-colors duration-200 flex items-center">
                     <svg className="w-3 h-3 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -142,7 +142,7 @@ export function Footer() {
         
         <div className="mt-12 pt-6 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-blue-300">
-            © {new Date().getFullYear()} Dr. Cardiology. All rights reserved.
+            © {new Date().getFullYear()} Dr. Partha Pratim Paul - Cardiology. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex items-center">
             <ul className="flex flex-wrap justify-center space-x-6 text-sm text-blue-300">

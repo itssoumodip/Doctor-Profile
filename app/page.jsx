@@ -31,7 +31,7 @@ export default function Home() {
               
               <div className="space-y-4">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600 animate-fade-in">
-                  Dr. <span className="relative inline-block">
+                  Dr. Partha Pratim Paul <span className="relative inline-block">
                     <div className="absolute -bottom-1 left-0 w-full h-1 bg-blue-500 rounded-full transform origin-left animate-pulse-slow"></div>
                   </span>
                 </h1>
@@ -83,14 +83,14 @@ export default function Home() {
                 <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0 animate-blob animation-delay-2000"></div>
                 <Image
                   src="https://images.unsplash.com/photo-1599493758267-c6c884c7071f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Dr."
+                  alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover z-10 relative transition-transform duration-500 hover:scale-105 hover:rotate-1"
                   priority
                 />
                 {/* Add floating badge */}
                 <div className="absolute bottom-4 right-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-l-lg shadow-lg z-20 animate-pulse-slow">
-                  <p className="text-blue-700 font-semibold">Dr. </p>
+                  <p className="text-blue-700 font-semibold">Dr. Partha Pratim Paul</p>
                 </div>
               </div>
             </div>

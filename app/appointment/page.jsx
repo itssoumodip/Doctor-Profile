@@ -196,7 +196,7 @@ export default function AppointmentPage() {
     <main className="container px-4 md:px-6 py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-900 mb-2">Book an Appointment</h1>
-        <p className="text-gray-600 mb-8">Schedule a consultation with Dr. </p>
+        <p className="text-gray-600 mb-8">Schedule a consultation with Dr. Partha Pratim Paul</p>
         
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           {/* Steps indicator */}
