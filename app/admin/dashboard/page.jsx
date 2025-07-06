@@ -123,22 +123,11 @@ export default function AdminDashboard() {
               <p className="text-xs text-green-100">Ready to go</p>
             </CardContent>
           </Card>
-
-          <Card className="bg-gradient-to-r from-purple-500 to-purple-600 text-white">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Unread Messages</CardTitle>
-              <Mail className="h-4 w-4" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{analytics.unreadMessages}</div>
-              <p className="text-xs text-purple-100">Need attention</p>
-            </CardContent>
-          </Card>
         </div>
       )}
 
       {/* Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="">
         {/* Recent Appointments */}
         <Card>
           <CardHeader>
@@ -177,43 +166,6 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
 
-        {/* Recent Messages */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Mail className="h-5 w-5 text-green-600" />
-              Recent Messages
-            </CardTitle>
-            <CardDescription>Latest contact form submissions</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {recentMessages.length > 0 ? (
-                recentMessages.map((message) => (
-                  <div key={message.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex-1">
-                      <p className="font-medium text-gray-900">
-                        {message.firstName} {message.lastName}
-                      </p>
-                      <p className="text-sm text-gray-600 line-clamp-1">
-                        {message.subject}
-                      </p>
-                      <p className="text-xs text-gray-500">{message.email}</p>
-                    </div>
-                    <div className="flex flex-col items-end gap-1">
-                      {getStatusBadge(message.status)}
-                      <span className="text-xs text-gray-500">
-                        {formatDate(message.createdAt)}
-                      </span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p className="text-gray-500 text-center py-4">No recent messages</p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { Calendar, Clock, ArrowRight, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
@@ -26,8 +26,44 @@ export default function AppointmentPage() {
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [bookedSlots, setBookedSlots] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm()
   const { toast } = useToast()
+  
+  // Fetch booked slots whenever the selected date changes
+  useEffect(() => {
+    const fetchBookedSlots = async () => {
+      if (!selectedDate) return
+      
+      setIsLoading(true)
+      try {
+        const response = await fetch(`/api/available-slots?date=${encodeURIComponent(selectedDate)}`)
+        const data = await response.json()
+        
+        if (data.success) {
+          setBookedSlots(data.bookedSlots || [])
+          // If the currently selected time is booked, clear it
+          if (selectedTime && data.bookedSlots.includes(selectedTime)) {
+            setSelectedTime(null)
+            toast({
+              title: "Time Slot No Longer Available",
+              description: "The time slot you selected has been booked. Please select another time.",
+              variant: "destructive",
+            })
+          }
+        } else {
+          console.error("Error fetching booked slots:", data.error)
+        }
+      } catch (error) {
+        console.error("Error fetching booked slots:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    
+    fetchBookedSlots()
+  }, [selectedDate, toast])
   
   // Suppress extension-related errors
   useEffect(() => {
@@ -51,10 +87,69 @@ export default function AppointmentPage() {
     }
   }, [])
   
+  // Check if a time slot is already booked
+  const isTimeSlotBooked = (time) => {
+    return bookedSlots.includes(time)
+  }
+  
+  // Verify slot availability before submitting
+  const verifySlotAvailability = async () => {
+    try {
+      const response = await fetch('/api/available-slots', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          date: selectedDate,
+          time: selectedTime
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (data.success && !data.isAvailable) {
+        toast({
+          title: "Time Slot Unavailable",
+          description: "This time slot is no longer available. Please select another time.",
+          variant: "destructive",
+        })
+        
+        // Refresh the booked slots
+        const refreshResponse = await fetch(`/api/available-slots?date=${encodeURIComponent(selectedDate)}`)
+        const refreshData = await refreshResponse.json()
+        
+        if (refreshData.success) {
+          setBookedSlots(refreshData.bookedSlots || [])
+          setSelectedTime(null)
+        }
+        
+        return false
+      }
+      
+      return true
+    } catch (error) {
+      console.error("Error verifying slot availability:", error)
+      toast({
+        title: "Error",
+        description: "Failed to verify slot availability. Please try again.",
+        variant: "destructive",
+      })
+      return false
+    }
+  }
+  
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     
     try {
+      // Verify slot availability before proceeding
+      const isAvailable = await verifySlotAvailability()
+      if (!isAvailable) {
+        setIsSubmitting(false)
+        return
+      }
+      
       const appointmentData = {
         ...data,
         appointmentDate: selectedDate,
@@ -174,21 +269,31 @@ export default function AppointmentPage() {
                     Select Time
                   </h2>
                   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-                    {TIME_SLOTS.map((time) => (
-                      <button
-                        key={time}
-                        type="button"
-                        className={cn(
-                          "p-3 border rounded-md hover:border-blue-500 text-center transition-colors",
-                          selectedTime === time 
-                            ? "bg-blue-900 text-white border-blue-900" 
-                            : "bg-white border-gray-200"
-                        )}
-                        onClick={() => setSelectedTime(time)}
-                      >
-                        {time}
-                      </button>
-                    ))}
+                    {TIME_SLOTS.map((time) => {
+                      const isBooked = bookedSlots.includes(time)
+                      return (
+                        <button
+                          key={time}
+                          type="button"
+                          className={cn(
+                            "p-3 border rounded-md hover:border-blue-500 text-center transition-colors",
+                            selectedTime === time 
+                              ? "bg-blue-900 text-white border-blue-900" 
+                              : "bg-white border-gray-200",
+                            isBooked && "opacity-50 cursor-not-allowed"
+                          )}
+                          onClick={() => !isBooked && setSelectedTime(time)}
+                          disabled={isBooked}
+                        >
+                          {time}
+                          {isBooked && (
+                            <span className="ml-1 text-red-500" title="Booked">
+                              <AlertCircle className="h-4 w-4" />
+                            </span>
+                          )}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
               )}

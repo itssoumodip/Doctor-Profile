@@ -135,6 +135,7 @@ export default function AppointmentsPage() {
           duration: 5000,
         })
       } else {
+        // Handle slot conflict or other errors
         toast({
           title: "Error",
           description: result.error || "Failed to update appointment status",
@@ -244,14 +245,17 @@ export default function AppointmentsPage() {
     const statusConfig = {
       pending: { variant: 'secondary', color: 'bg-yellow-100 text-yellow-800' },
       confirmed: { variant: 'success', color: 'bg-green-100 text-green-800' },
-      cancelled: { variant: 'destructive', color: 'bg-red-100 text-red-800' }
+      cancelled: { variant: 'destructive', color: 'bg-red-100 text-red-800' },
+      approved: { variant: 'success', color: 'bg-green-100 text-green-800' }
     }
     
-    const config = statusConfig[status] || statusConfig.pending
+    // Default to pending if status is undefined or not in our config
+    const safeStatus = status || 'pending'
+    const config = statusConfig[safeStatus] || statusConfig.pending
     
     return (
       <Badge className={config.color}>
-        {status.charAt(0).toUpperCase() + status.slice(1)}
+        {safeStatus.charAt(0).toUpperCase() + safeStatus.slice(1)}
       </Badge>
     )
   }

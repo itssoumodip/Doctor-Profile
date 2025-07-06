@@ -189,21 +189,6 @@ export default function PatientsPage() {
             </p>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Messages</CardTitle>
-            <Mail className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">
-              {filteredPatients.reduce((sum, patient) => sum + patient.messages.length, 0)}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Contact form submissions
-            </p>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Search */}
@@ -336,7 +321,6 @@ export default function PatientsPage() {
                 <div className="space-y-2">
                   <h3 className="font-semibold">Summary</h3>
                   <p><strong>Total Appointments:</strong> {selectedPatient.appointments.length}</p>
-                  <p><strong>Total Messages:</strong> {selectedPatient.messages.length}</p>
                   <p><strong>Last Contact:</strong> {formatDate(selectedPatient.lastContact)}</p>
                 </div>
               </div>

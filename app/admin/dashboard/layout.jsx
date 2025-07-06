@@ -37,10 +37,8 @@ function AdminLayout({ children }) {
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
     { name: 'Appointments', href: '/admin/dashboard/appointments', icon: Calendar },
-    { name: 'Messages', href: '/admin/dashboard/messages', icon: Mail },
     { name: 'Patients', href: '/admin/dashboard/patients', icon: Users },
     { name: 'Admin Users', href: '/admin/dashboard/admins', icon: Shield },
-    { name: 'Permissions Test', href: '/admin/dashboard/permissions-test', icon: Lock },
     { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
   ]
 
