@@ -97,8 +97,8 @@ export default function AppointmentConfirmation() {
                 If you need to modify or cancel your appointment, please contact us:
               </p>
               <div className="text-sm space-y-1">
-                <p><strong>Email:</strong> {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@clinic.com'}</p>
-                <p><strong>Phone:</strong> {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (555) 123-4567'}</p>
+                <p><strong>Email:</strong> {process.env.NEXT_PUBLIC_CONTACT_EMAIL}</p>
+                <p><strong>Phone:</strong> {process.env.NEXT_PUBLIC_CONTACT_PHONE}</p>
               </div>
             </div>
 

@@ -3,6 +3,15 @@ import { NextResponse } from 'next/server'
 // Email function for appointment rejection
 const sendAppointmentRejectionEmail = async (userEmail, userName, appointmentDetails, rejectionReason) => {
   try {
+    console.log('Starting to send rejection email to:', userEmail)
+    console.log('Email parameters:', {
+      userName,
+      date: appointmentDetails.date,
+      time: appointmentDetails.time,
+      service: appointmentDetails.service,
+      reason: rejectionReason
+    })
+    
     const nodemailer = await import('nodemailer')
     
     const transporter = nodemailer.createTransport({
@@ -18,7 +27,7 @@ const sendAppointmentRejectionEmail = async (userEmail, userName, appointmentDet
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
       to: userEmail,
-      subject: 'Appointment Update - Dr. Heart Specialist',
+      subject: 'Appointment Update - Dr. Partha Pratim Paul',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #dc2626;">Appointment Update</h2>
@@ -52,8 +61,8 @@ const sendAppointmentRejectionEmail = async (userEmail, userName, appointmentDet
           
           <p>We apologize for any inconvenience and look forward to serving you soon. Please don't hesitate to contact us:</p>
           <ul>
-            <li>Phone: [Your Phone Number]</li>
-            <li>Email: ${process.env.SMTP_EMAIL}</li>
+            <li>Phone: ${process.env.NEXT_PUBLIC_CONTACT_PHONE}</li>
+            <li>Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}</li>
           </ul>
           
           <p>Thank you for your understanding.</p>
@@ -84,10 +93,30 @@ export async function POST(request) {
       )
     }
 
+    // Log received data for debugging
+    console.log('Rejection email API received:', { userEmail, userName, appointmentDetails, rejectionReason })
+    
+    // Check for fields that might be undefined
+    if (!appointmentDetails.date) {
+      console.warn('Missing appointmentDetails.date, using fallback')
+      appointmentDetails.date = appointmentDetails.appointmentDate || 'Not specified'
+    }
+    
+    if (!appointmentDetails.time) {
+      console.warn('Missing appointmentDetails.time, using fallback')
+      appointmentDetails.time = appointmentDetails.appointmentTime || 'Not specified'
+    }
+    
+    if (!appointmentDetails.service) {
+      console.warn('Missing appointmentDetails.service, using fallback')
+      appointmentDetails.service = appointmentDetails.reason || 'Medical appointment'
+    }
+    
     // Send rejection email to user
     const emailResult = await sendAppointmentRejectionEmail(userEmail, userName, appointmentDetails, rejectionReason)
 
     if (emailResult.success) {
+      console.log('Rejection email sent successfully', emailResult)
       return NextResponse.json({
         success: true,
         message: 'Rejection notification email sent successfully',

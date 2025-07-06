@@ -18,10 +18,10 @@ const sendAppointmentBookingEmail = async (userEmail, userName, appointmentDetai
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
       to: userEmail,
-      subject: 'Appointment Booking Confirmation - Dr. Heart Specialist',
+      subject: 'Appointment Booking Confirmation - Dr. Partha Pratim Paul',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">Appointment Request Received ✅</h2>
+          <h2 style="color: #2563eb;">Appointment Request Received</h2>
           <p>Dear ${userName},</p>
           
           <p>Thank you for booking an appointment with us. We have received your appointment request and are currently reviewing it.</p>
@@ -50,8 +50,8 @@ const sendAppointmentBookingEmail = async (userEmail, userName, appointmentDetai
           
           <p>If you have any questions or need to modify your appointment, please contact us:</p>
           <ul>
-            <li>📞 Phone: [Your Phone Number]</li>
-            <li>📧 Email: ${process.env.SMTP_EMAIL}</li>
+            <li>Phone: ${process.env.NEXT_PUBLIC_CONTACT_PHONE}</li>
+            <li>Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}</li>
           </ul>
           
           <p>Thank you for choosing our medical services!</p>

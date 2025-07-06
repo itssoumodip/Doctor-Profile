@@ -18,7 +18,7 @@ const sendAppointmentApprovalEmail = async (userEmail, userName, appointmentDeta
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
       to: userEmail,
-      subject: 'Appointment Approved - Dr. Heart Specialist',
+      subject: 'Appointment Approved - Dr. Partha Pratim Paul',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #16a34a;">Appointment Confirmed!</h2>
@@ -46,8 +46,8 @@ const sendAppointmentApprovalEmail = async (userEmail, userName, appointmentDeta
           
           <p>If you have any questions or need to make changes to your appointment, please contact us:</p>
           <ul>
-            <li>Phone: [Your Phone Number]</li>
-            <li>Email: ${process.env.SMTP_EMAIL}</li>
+            <li>Phone: ${process.env.NEXT_PUBLIC_CONTACT_PHONE}</li>
+            <li>Email: ${process.env.NEXT_PUBLIC_CONTACT_EMAIL}</li>
           </ul>
           
           <p>We look forward to seeing you soon!</p>
