@@ -1,4 +1,4 @@
 export const metadata = {
-  title: "Dr. Partha Pratim Paul - Cardiologist & Heart Specialist",
-  description: "Expert cardiac care with personalized treatment plans for your heart health needs",
+  title: "Dr. Partha Pratim Paul - Obstetrician & Gynaecologist",
+  description: "Expert women's health care with comprehensive obstetric and gynecological services including infertility management and minimally invasive procedures",
 }

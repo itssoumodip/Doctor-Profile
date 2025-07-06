@@ -3,49 +3,72 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { TestimonialCard } from "./testimonial-card"
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore"
+import { db } from "@/lib/firebase"
 
 export function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [testimonials, setTestimonials] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const testimonials = [
-    {
-      name: "NAME",
-      age: "AGE",
-      condition: "Heart Attack Survivor",
-      quote:
-        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
-      rating: 5,
-    },
-    {
-      name: "NAME",
-      age: "AGE",
-      condition: "Heart Attack Survivor",
-      quote:
-        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
-      rating: 5,
-    },
-    {
-      name: "NAME",
-      age: "AGE",
-      condition: "Heart Attack Survivor",
-      quote:
-        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
-      rating: 5,
-    },
-    {
-      name: "NAME",
-      age: "AGE",
-      condition: "Heart Attack Survivor",
-      quote:
-        "MESSAGE - lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies. Nullam nec purus ut felis fermentum aliquam. Sed nec nunc nec purus ultricies ultricies.",
-      image: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
-      rating: 5,
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        setLoading(true)
+        const testimonialsCollection = collection(db, 'testimonials')
+        const testimonialsQuery = query(
+          testimonialsCollection,
+          orderBy('createdAt', 'desc'),
+          limit(10)
+        )
+        const snapshot = await getDocs(testimonialsQuery)
+        
+        if (!snapshot.empty) {
+          const testimonialsData = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }))
+          setTestimonials(testimonialsData)
+        } else {
+          // Fallback to demo testimonials if none exist in the database
+          setTestimonials([
+            {
+              name: "John Davis",
+              age: 54,
+              condition: "Heart Attack Survivor",
+              quote: "Dr. Paul's expertise and care were instrumental in my recovery. His thorough approach and clear explanations helped me understand my condition and the path to recovery.",
+              image: "/placeholder-user.jpg", 
+              rating: 5,
+            },
+            {
+              name: "Sarah Johnson",
+              age: 48,
+              condition: "Hypertension Patient",
+              quote: "After struggling with high blood pressure for years, Dr. Paul's treatment plan finally helped me get it under control. His attentive care made all the difference.",
+              image: "/placeholder-user.jpg", 
+              rating: 5,
+            },
+            {
+              name: "Robert Wilson",
+              age: 62,
+              condition: "Cardiac Surgery Patient",
+              quote: "The pre and post-operative care I received was exceptional. Dr. Paul's expertise and compassionate approach helped ease my anxiety throughout the process.",
+              image: "/placeholder-user.jpg", 
+              rating: 5,
+            }
+          ])
+        }
+      } catch (error) {
+        console.error("Error fetching testimonials:", error)
+        // Fallback to empty array
+        setTestimonials([])
+      } finally {
+        setLoading(false)
+      }
     }
-   
-  ]
+
+    fetchTestimonials()
+  }, [])
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
@@ -64,6 +87,27 @@ export function TestimonialSlider() {
     return () => clearInterval(interval)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-md">
+        <div className="animate-pulse">
+          <div className="h-20 bg-gray-200 rounded-md mb-4"></div>
+          <div className="h-12 bg-gray-200 w-3/4 rounded-md mb-3"></div>
+          <div className="h-12 bg-gray-200 w-1/2 rounded-md"></div>
+        </div>
+        <p className="text-center text-gray-500 mt-4">Loading testimonials...</p>
+      </div>
+    )
+  }
+
+  if (testimonials.length === 0) {
+    return (
+      <div className="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-md">
+        <p className="text-center text-gray-500">No testimonials available yet.</p>
+      </div>
+    )
+  }
+
   return (
     <div className="relative max-w-4xl mx-auto">
       <div className="overflow-hidden rounded-xl">
@@ -72,7 +116,7 @@ export function TestimonialSlider() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="w-full flex-shrink-0 px-4">
+            <div key={testimonial.id || index} className="w-full flex-shrink-0 px-4">
               <TestimonialCard 
                 name={testimonial.name}
                 age={testimonial.age}

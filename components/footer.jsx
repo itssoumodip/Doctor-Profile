@@ -40,7 +40,7 @@ export function Footer() {
             </div>
             
             <p className="text-blue-200 leading-relaxed">
-              Providing exceptional cardiac care with personalized treatment plans for every patient's unique heart health needs.
+              Providing exceptional women's healthcare with personalized treatment plans for every patient's unique reproductive and gynecological needs.
             </p>
             
             <div className="flex space-x-4 pt-2">
@@ -90,7 +90,7 @@ export function Footer() {
               </span>
             </h3>
             <ul className="space-y-2">
-              {['Cardiac Consultation', 'Echocardiography', 'Preventive Cardiology', 'Heart Failure Management', 'Cardiac Rehabilitation'].map((service, index) => (
+              {['Obstetric Care', 'Infertility Management', 'Minimally Invasive Surgery', 'High-Risk Pregnancy Care', 'Gynecological Procedures'].map((service, index) => (
                 <li key={index} className="transform transition-transform duration-200 hover:translate-x-1">
                   <a href="#" className="text-blue-200 hover:text-white transition-colors duration-200 flex items-center group">
                     <span className="w-2 h-2 rounded-full bg-blue-400 mr-2 group-hover:scale-125 transition-transform duration-300"></span>
@@ -142,7 +142,7 @@ export function Footer() {
         
         <div className="mt-12 pt-6 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-blue-300">
-            © {new Date().getFullYear()} Dr. Partha Pratim Paul - Cardiology. All rights reserved.
+            © {new Date().getFullYear()} Dr. Partha Pratim Paul - Obstetrics & Gynecology. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex items-center">
             <ul className="flex flex-wrap justify-center space-x-6 text-sm text-blue-300">

@@ -26,7 +26,7 @@ export default function Home() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                 </span>
-                <span className="text-sm font-medium">Highly Rated Specialist</span>
+                <span className="text-sm font-medium">Women's Health Expert</span>
               </div>
               
               <div className="space-y-4">
@@ -36,11 +36,10 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="text-blue-600 text-xl md:text-2xl font-medium animate-fade-in animation-delay-200">
-                  Cardiologist & Heart Specialist
+                  Obstetrician & Gynaecologist
                 </p>
                 <p className="max-w-[600px] text-gray-600 md:text-xl animate-fade-in animation-delay-300 leading-relaxed">
-                  Providing exceptional cardiac care with over 15 years of experience. Dedicated to improving heart
-                  health and patient well-being through personalized treatment plans.
+                  Providing exceptional women's healthcare with comprehensive experience in obstetrics and gynecology. Dedicated to comprehensive obstetric and gynecological care with expertise in infertility management and minimally invasive procedures.
                 </p>
               </div>
               
@@ -82,7 +81,7 @@ export default function Home() {
                 <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-400 rounded-full opacity-70 z-0 animate-blob"></div>
                 <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0 animate-blob animation-delay-2000"></div>
                 <Image
-                  src="https://images.unsplash.com/photo-1599493758267-c6c884c7071f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/doctor.jpg"
                   alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover z-10 relative transition-transform duration-500 hover:scale-105 hover:rotate-1"
@@ -119,11 +118,11 @@ export default function Home() {
                 <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x pb-3 leading-tight">
-                Making a Difference in Cardiac Care
+                Making a Difference in Women's Healthcare
               </h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
               <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg leading-relaxed mt-3">
-                Our commitment to excellence has helped thousands of patients achieve better heart health
+                Our commitment to excellence has helped thousands of women achieve better reproductive and overall health
               </p>
             </div>
           </ScrollReveal>
@@ -146,7 +145,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
                 <StatCounter
                   icon={<Clock className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                  value={15}
+                  value={10}
                   suffix="+"
                   label="Years of Experience"
                   duration={1500}
@@ -159,7 +158,7 @@ export default function Home() {
               <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
                 <StatCounter
                   icon={<Award className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                  value={12}
+                  value={5}
                   label="Awards Received"
                   duration={1800}
                   className="glass-effect"
@@ -207,7 +206,7 @@ export default function Home() {
               </h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
               <p className="max-w-[700px] text-gray-600 md:text-xl leading-relaxed">
-                Advanced cardiac care services tailored to your specific health needs
+                Comprehensive women's healthcare services tailored to your specific reproductive and gynecological needs
               </p>
             </div>
           </ScrollReveal>
@@ -216,8 +215,8 @@ export default function Home() {
             <ScrollReveal delay={100} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Cardiac Consultation"
-                  description="Comprehensive evaluation of your heart health with personalized recommendations and long-term care planning."
+                  title="Obstetric Care"
+                  description="Comprehensive prenatal, delivery, and postnatal care including management of high-risk pregnancies and obstetric emergencies."
                   icon="Heart"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -229,8 +228,8 @@ export default function Home() {
             <ScrollReveal delay={200} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Echocardiography"
-                  description="Advanced ultrasound imaging to assess heart structure and function with the latest technology and expert interpretation."
+                  title="Infertility Management"
+                  description="Comprehensive infertility evaluation and treatment including ovulation induction, IUI, and pre-IVF consultations."
                   icon="Activity"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -242,8 +241,8 @@ export default function Home() {
             <ScrollReveal delay={300} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Preventive Cardiology"
-                  description="Personalized strategies to prevent heart disease and maintain optimal cardiovascular health for life."
+                  title="Minimally Invasive Surgery"
+                  description="Advanced laparoscopic, hysteroscopic, and vaginal procedures for various gynecological conditions with faster recovery."
                   icon="Shield"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -258,8 +257,8 @@ export default function Home() {
             <ScrollReveal delay={400} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Cardiac Rehabilitation"
-                  description="Supervised programs to help recover from heart procedures and improve cardiovascular health."
+                  title="Colposcopy & Hysteroscopy"
+                  description="Advanced diagnostic and therapeutic procedures for cervical and uterine conditions with precision and care."
                   icon="HeartPulse"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -271,8 +270,8 @@ export default function Home() {
             <ScrollReveal delay={500} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Heart Failure Management"
-                  description="Comprehensive care for heart failure patients with evidence-based treatments and monitoring."
+                  title="High-Risk Pregnancy Care"
+                  description="Expert management of complex pregnancies including gestational diabetes, hypertension, and multiple gestations."
                   icon="Stethoscope"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -284,8 +283,8 @@ export default function Home() {
             <ScrollReveal delay={600} animation="animate-slide-up">
               <div className="group transform transition-all duration-500 hover:-translate-y-2">
                 <ServiceCard
-                  title="Cardiovascular Risk Assessment"
-                  description="Detailed evaluation of your heart disease risk factors with personalized prevention strategies."
+                  title="Cosmetic Gynecology"
+                  description="Advanced cosmetic gynecological procedures to enhance comfort, confidence, and intimate wellness."
                   icon="LineChart"
                   className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                   iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -330,10 +329,10 @@ export default function Home() {
               <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Why Choose Dr.</span>
               <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-2">World-Class Cardiac Care</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-2">World-Class Women's Healthcare</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl">
-              Experience the difference with personalized, evidence-based heart care
+              Experience the difference with personalized, evidence-based women's healthcare
             </p>
           </div>
           
@@ -345,8 +344,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-blue-900">Patient-Centered Approach</h3>
-              <p className="text-gray-600">Your care is personalized to your unique needs, with treatments tailored specifically for you.</p>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">Compassionate Women's Care</h3>
+              <p className="text-gray-600">Your reproductive and gynecological health is personalized to your unique needs and life stage.</p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -376,8 +375,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-blue-900">Advanced Technology</h3>
-              <p className="text-gray-600">Access to the latest diagnostic and treatment technologies for optimal heart care.</p>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">Advanced Medical Technology</h3>
+              <p className="text-gray-600">Access to the latest diagnostic and treatment technologies for optimal women's healthcare.</p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -407,8 +406,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-blue-900">Evidence-Based Care</h3>
-              <p className="text-gray-600">All treatments follow the latest clinical research and cardiac care guidelines.</p>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">Evidence-Based Practice</h3>
+              <p className="text-gray-600">All treatments follow the latest clinical research and obstetric-gynecological care guidelines.</p>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -447,13 +446,13 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 mt-2">What to Expect</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-4 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-lg">
-              Your heart health journey with Dr. is streamlined and comprehensive
+              Your women's healthcare journey with Dr. Paul is streamlined and comprehensive
             </p>
           </div>
           
           <div className="relative">
             {/* Connector Line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-500 to-blue-200 transform -translate-y-1/2 z-0"></div>
+
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
               {/* Step 1 */}
@@ -462,7 +461,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">1</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-900">Initial Consultation</h3>
-                <p className="text-gray-600">Comprehensive assessment of your heart health and medical history.</p>
+                <p className="text-gray-600">Comprehensive assessment of your reproductive health, medical history, and specific concerns.</p>
               </div>
               
               {/* Step 2 */}
@@ -471,7 +470,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">2</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-900">Diagnostic Testing</h3>
-                <p className="text-gray-600">State-of-the-art cardiac diagnostics to accurately assess your condition.</p>
+                <p className="text-gray-600">Advanced gynecological and obstetric diagnostics including ultrasound, colposcopy, and lab work.</p>
               </div>
               
               {/* Step 3 */}
@@ -480,7 +479,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">3</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-900">Treatment Plan</h3>
-                <p className="text-gray-600">Personalized care plan tailored to your specific cardiac needs.</p>
+                <p className="text-gray-600">Personalized care plan tailored to your specific reproductive and gynecological needs.</p>
               </div>
               
               {/* Step 4 */}
@@ -489,7 +488,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">4</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-900">Follow-Up Care</h3>
-                <p className="text-gray-600">Ongoing support and monitoring to ensure optimal heart health.</p>
+                <p className="text-gray-600">Ongoing support and monitoring to ensure optimal reproductive and overall health.</p>
               </div>
             </div>
           </div>
@@ -526,9 +525,9 @@ export default function Home() {
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Voice of Our Patients</h2>
             <div className="w-24 h-1.5 bg-white opacity-60 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
-            <p className="max-w-[700px] text-blue-100 md:text-xl">
-              Discover what our patients say about their journey to better heart health
-            </p>
+              <p className="max-w-[700px] text-blue-100 md:text-xl">
+                Discover what our patients say about their journey to better women's health
+              </p>
           </div>
           
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 shadow-xl mb-12">
@@ -551,9 +550,9 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-3 space-y-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Ready to prioritize your heart health?</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Ready to prioritize your women's health?</h2>
               <p className="text-blue-100 max-w-2xl">
-                Take the first step toward a healthier heart today. Schedule a consultation with Dr. for personalized cardiac care.
+                Take the first step toward better women's healthcare today. Schedule a consultation with Dr. Paul for personalized obstetric and gynecological care.
               </p>
             </div>
             <div className="md:col-span-2 flex flex-col sm:flex-row gap-4 justify-end">
@@ -590,7 +589,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Call Us</p>
-                    <p className="text-gray-600">(+91) 0000000000</p>
+                    <p className="text-gray-600">+91 9874147230</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -599,7 +598,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Visit Us</p>
-                    <p className="text-sm text-gray-600">Kolkata</p>
+                    <p className="text-sm text-gray-600">Kalyani, Nadia, West Bengal</p>
                   </div>
                 </div>
               </div>
@@ -622,8 +621,8 @@ export default function Home() {
                 className="w-full h-full"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-3">
-                <p className="font-medium">Dr. Office</p>
-                <p className="text-sm text-gray-600">Kolkata</p>
+                <p className="font-medium">Dr. Partha Pratim Paul's Clinic</p>
+                <p className="text-sm text-gray-600">Kalyani, Nadia, West Bengal</p>
               </div>
             </div>
           </div>

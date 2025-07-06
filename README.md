@@ -8,7 +8,7 @@ A modern, responsive doctor profile website for Dr. Partha Pratim Paul built wit
 - Interactive appointment booking
 - Contact form with email notifications
 - Admin dashboard
-- Patient testimonials
+- Patient testimonials management system
 - Service information
 - Double-booking prevention for appointments
 
@@ -86,3 +86,41 @@ When deploying to Vercel, make sure to add all the required environment variable
 - `SMTP_PASSWORD`
 - `CONTACT_RECIPIENT_EMAIL`
 - Firebase configuration variables
+
+## Testimonials Management
+
+The website includes a comprehensive testimonials management system allowing administrators to:
+
+1. View all existing patient testimonials
+2. Add new testimonials with:
+   - Patient name and age
+   - Medical condition
+   - Star rating (1-5)
+   - Testimonial quote/text
+   - Optional patient image
+
+3. Edit existing testimonials
+4. Delete testimonials that are no longer needed
+
+### How It Works
+
+- **Admin Dashboard**: Access the testimonials management via `/admin/dashboard/testimonials`
+- **Firebase Integration**: All testimonials are stored in Firebase Firestore in a `testimonials` collection
+- **Public Display**: Testimonials are automatically displayed on the public testimonials page
+- **Image Handling**: Uses placeholders if no custom image is provided
+
+### Testimonial Structure
+
+Each testimonial includes:
+```javascript
+{
+  name: "Patient Name",
+  age: 45,
+  condition: "Medical Condition",
+  quote: "Patient testimonial text...",
+  rating: 5, // 1-5 stars
+  image: "/path/to/image.jpg", // Optional, defaults to placeholder
+  createdAt: "timestamp",
+  updatedAt: "timestamp" // Only present if edited
+}
+```

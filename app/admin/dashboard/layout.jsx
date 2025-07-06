@@ -10,7 +10,7 @@ import {
   Calendar, 
   Mail, 
   Users, 
-  Settings, 
+  MessageCircle, 
   LogOut,
   Menu,
   X,
@@ -39,7 +39,7 @@ function AdminLayout({ children }) {
     { name: 'Appointments', href: '/admin/dashboard/appointments', icon: Calendar },
     { name: 'Patients', href: '/admin/dashboard/patients', icon: Users },
     { name: 'Admin Users', href: '/admin/dashboard/admins', icon: Shield },
-    { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
+    { name: 'Testimonials', href: '/admin/dashboard/testimonials', icon: MessageCircle },
   ]
 
   if (isLoading) {

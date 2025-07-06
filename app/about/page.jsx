@@ -32,18 +32,18 @@ export default function AboutPage() {
             </h1>
             
             <p className="max-w-[800px] text-gray-700 md:text-xl lg:text-2xl animate-fade-in animation-delay-200">
-              Dedicated to excellence in cardiac care with over <span className="text-blue-700 font-semibold">15 years</span> of experience transforming patient lives
+              Dedicated to excellence in women's healthcare with comprehensive experience in obstetrics and gynecology, transforming women's lives through expert care
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mt-4 animate-fade-in animation-delay-300">
               <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-6 py-2 rounded-full text-sm font-medium border border-blue-100 shadow-sm hover:shadow-md transition-all">
-                Board Certified Cardiologist
+                MBBS, DNB (Gynecology & Obstetrics)
               </span>
               <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-6 py-2 rounded-full text-sm font-medium border border-blue-100 shadow-sm hover:shadow-md transition-all">
-                Medical Researcher
+                FMAS (Fellowship in Minimal Access Surgery)
               </span>
               <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-6 py-2 rounded-full text-sm font-medium border border-blue-100 shadow-sm hover:shadow-md transition-all">
-                Published Author
+                Fellowship in Cosmetic Gynecology
               </span>
             </div>
             
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-start animate-fade-in order-2 lg:order-1">
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl transform hover:translate-y-[-5px] transition-all duration-500 group">
                 <Image
-                  src="https://images.unsplash.com/photo-1603843722974-3a4031f9f97c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="/doctor.jpg"
                   alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -82,9 +82,9 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-white font-bold text-xl">Dr. Partha Pratim Paul</h3>
-                  <p className="text-white/80 text-sm">Cardiologist & Medical Director</p>
+                  <p className="text-white/80 text-sm">Obstetrician & Gynecologist</p>
                   <div className="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="bg-blue-600/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">15+ Years Experience</span>
+                    <span className="bg-blue-600/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">MBBS, DNB (Gyn & Obs)</span>
                   </div>
                   
                   {/* Decorative elements */}
@@ -101,13 +101,13 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-blue-900 leading-tight">My Story</h2>
               <div className="space-y-5 text-gray-700">
                 <p className="md:text-lg leading-relaxed">
-                  I've dedicated my career to advancing cardiac care through innovative treatments and compassionate patient service. With over 15 years in the field, my focus remains on improving outcomes and quality of life for those with heart conditions.
+                  I've dedicated my career to advancing women's healthcare through comprehensive obstetric and gynecological care. My focus remains on improving outcomes and quality of life for women through expert medical care and compassionate service.
                 </p>
                 <p className="md:text-lg leading-relaxed">
-                  My approach combines the latest medical advancements with personalized care, recognizing that each patient's journey is unique. This philosophy has guided my research, teaching, and clinical practice throughout my career.
+                  My approach combines the latest medical advancements with personalized care, recognizing that each woman's reproductive and health journey is unique. This philosophy has guided my clinical practice, continuing education, and patient care throughout my career.
                 </p>
                 <blockquote className="pl-6 border-l-4 border-blue-500 italic text-gray-600 py-4 bg-blue-50/50 pr-6 rounded-r-lg my-6">
-                  "My mission is to provide compassionate care that transforms lives and advances cardiac medicine through innovation."
+                  "My mission is to provide compassionate women's healthcare that transforms lives through expert obstetric and gynecological care."
                 </blockquote>
               </div>
               <div className="flex flex-wrap gap-3 mt-6">
@@ -156,7 +156,7 @@ export default function AboutPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl mt-4">
-              Academic excellence and continuous professional development in cardiac care
+              Academic excellence and continuous professional development in obstetrics and gynecology
             </p>
           </div>
           <div className="grid gap-10 md:grid-cols-2 items-start">
@@ -170,22 +170,28 @@ export default function AboutPage() {
               <Timeline
                 items={[
                   {
-                    year: "2010",
-                    title: "Fellowship in Interventional Cardiology",
-                    institution: "Harvard Medical School",
-                    description: "Specialized training in advanced cardiac procedures and interventions for complex heart conditions.",
+                    year: "2025",
+                    title: "Fellowship in Cosmetic Gynecology",
+                    institution: "Advanced Training Institute",
+                    description: "Specialized training in cosmetic gynecological procedures and aesthetic treatments.",
                   },
                   {
-                    year: "2008",
-                    title: "Cardiology Residency",
-                    institution: "Johns Hopkins University",
-                    description: "Comprehensive training in diagnostics, treatment, and management of cardiovascular diseases.",
+                    year: "2025",
+                    title: "FMAS - Fellowship in Minimal Access Surgery",
+                    institution: "AMASI (Association of Minimal Access Surgeons of India)",
+                    description: "Advanced training in laparoscopic and minimally invasive surgical techniques.",
                   },
                   {
-                    year: "2005",
-                    title: "Doctor of Medicine (MD)",
-                    institution: "Stanford University School of Medicine",
-                    description: "Graduated with honors, specializing in internal medicine with focus on cardiology.",
+                    year: "2020",
+                    title: "DNB (Gynecology and Obstetrics)",
+                    institution: "Dr. L H Hiranandani Hospital, Powai, Mumbai",
+                    description: "Postgraduate specialization in obstetrics and gynecology from National Board Examinations.",
+                  },
+                  {
+                    year: "2015",
+                    title: "MBBS",
+                    institution: "R G Kar Medical College, Kolkata",
+                    description: "Bachelor of Medicine and Bachelor of Surgery from West Bengal University of Health Sciences.",
                   }
                 ]}
               />
@@ -202,9 +208,9 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">Excellence in Cardiac Research</h4>
-                      <p className="text-gray-600">Awarded for groundbreaking research in preventative cardiology approaches</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Awarded 2023</span>
+                      <h4 className="font-semibold text-gray-900 text-lg">MRCOG Part 1 Completed</h4>
+                      <p className="text-gray-600">Successfully completed Part 1 of the Membership of the Royal College of Obstetricians and Gynaecologists</p>
+                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Completed 2024</span>
                     </div>
                   </div>
                 </li>
@@ -212,9 +218,9 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">Board Certification in Cardiology</h4>
-                      <p className="text-gray-600">American Board of Internal Medicine, Cardiovascular Disease</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Renewed 2022</span>
+                      <h4 className="font-semibold text-gray-900 text-lg">WBMC Registration</h4>
+                      <p className="text-gray-600">Registered with West Bengal Medical Council - Registration No: 70044</p>
+                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Active License</span>
                     </div>
                   </div>
                 </li>
@@ -222,9 +228,9 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">Top Doctor Award</h4>
-                      <p className="text-gray-600">Recognized among top 1% of cardiologists nationwide for patient care and outcomes</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Awarded 2021</span>
+                      <h4 className="font-semibold text-gray-900 text-lg">Fellowship Certifications</h4>
+                      <p className="text-gray-600">Multiple fellowships including Minimal Access Surgery (FMAS) and Cosmetic Gynecology</p>
+                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Ongoing 2025</span>
                     </div>
                   </div>
                 </li>
