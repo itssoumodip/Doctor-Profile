@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Calendar, Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -5,6 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { SocialIcon } from "@/components/social-icon"
+import { useToast } from "@/components/ui/use-toast"
+import { Toaster } from "@/components/ui/toaster"
+import { createContactMessage } from "@/lib/firebaseOperations"
 import dynamic from 'next/dynamic'
 
 // Use dynamic import to avoid SSR issues with Leaflet
@@ -18,6 +24,69 @@ const ContactMap = dynamic(() => import('@/components/ContactMap'), {
 })
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+  const { toast } = useToast()
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const contactData = {
+        ...formData,
+        submittedAt: new Date().toISOString()
+      }
+
+      const result = await createContactMessage(contactData)
+
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for contacting us. We'll get back to you as soon as possible.",
+          duration: 5000,
+        })
+
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+      } else {
+        throw new Error(result.error)
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error)
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -115,16 +184,18 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold tracking-tighter text-blue-900">Send a Message</h2>
                 <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible</p>
               </div>
-              <form className="space-y-4 animate-fade-in animation-delay-300">
+              <form className="space-y-4 animate-fade-in animation-delay-300" onSubmit={handleSubmit}>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="first-name" className="text-sm font-medium text-gray-700">
                       First Name
                     </Label>
                     <Input
-                      id="first-name"
+                      id="firstName"
                       placeholder="Enter your first name"
                       required
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -133,9 +204,11 @@ export default function ContactPage() {
                       Last Name
                     </Label>
                     <Input
-                      id="last-name"
+                      id="lastName"
                       placeholder="Enter your last name"
                       required
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -150,6 +223,8 @@ export default function ContactPage() {
                       type="email"
                       placeholder="Enter your email"
                       required
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -161,6 +236,8 @@ export default function ContactPage() {
                       id="phone"
                       type="tel"
                       placeholder="Enter your phone number"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -173,6 +250,8 @@ export default function ContactPage() {
                     id="subject"
                     placeholder="Enter the subject of your message"
                     required
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -184,14 +263,17 @@ export default function ContactPage() {
                     id="message"
                     placeholder="Enter your message"
                     required
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="min-h-[150px] transition-all duration-300 focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 transform hover:scale-105"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
               <div className="rounded-xl overflow-hidden shadow-lg h-[300px] animate-fade-in animation-delay-400">
@@ -201,6 +283,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <Toaster />
 
       {/* FAQ Section */}
       <section className="w-full py-12 md:py-24 bg-gray-50">

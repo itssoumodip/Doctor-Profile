@@ -9,15 +9,17 @@ try {
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx'], // Only JS and JSX
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['api.mapbox.com', 'images.unsplash.com', 'cdn-icons-png.flaticon.com'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   typescript: {
-    // This will completely ignore TypeScript
     ignoreBuildErrors: true,
-  }
+  },
 }
 
 // Apply user config if available

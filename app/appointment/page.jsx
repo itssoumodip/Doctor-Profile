@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
+import { createAppointment } from "@/lib/firebaseOperations"
 
 /**
  * Available time slots for appointments
@@ -24,20 +25,70 @@ export default function AppointmentPage() {
   const [step, setStep] = useState(1)
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm()
   const { toast } = useToast()
   
-  const onSubmit = (data) => {
-    toast({
-      title: "Appointment Booked",
-      description: `Your appointment has been scheduled for ${selectedDate} at ${selectedTime}. We'll contact you shortly with confirmation.`,
-      duration: 5000,
-    })
+  // Suppress extension-related errors
+  useEffect(() => {
+    const originalConsoleError = console.error
+    console.error = (...args) => {
+      const message = args[0]?.toString() || ''
+      // Filter out extension-related errors
+      if (
+        message.includes('hybridaction') ||
+        message.includes('autotrack.studyquicks.com') ||
+        message.includes('chrome-extension') ||
+        message.includes('questionai')
+      ) {
+        return // Suppress these errors
+      }
+      originalConsoleError.apply(console, args)
+    }
     
-    // Reset form or redirect to confirmation page
-    setTimeout(() => {
-      window.location.href = "/"
-    }, 6000)
+    return () => {
+      console.error = originalConsoleError
+    }
+  }, [])
+  
+  const onSubmit = async (data) => {
+    setIsSubmitting(true)
+    
+    try {
+      const appointmentData = {
+        ...data,
+        appointmentDate: selectedDate,
+        appointmentTime: selectedTime,
+        submittedAt: new Date().toISOString()
+      }
+      
+      const result = await createAppointment(appointmentData)
+      
+      if (result.success) {
+        toast({
+          title: "Appointment Booked Successfully!",
+          description: `Your appointment has been scheduled for ${selectedDate} at ${selectedTime}. We'll contact you shortly with confirmation.`,
+          duration: 5000,
+        })
+        
+        // Reset form after successful submission
+        setTimeout(() => {
+          window.location.href = "/"
+        }, 3000)
+      } else {
+        throw new Error(result.error)
+      }
+    } catch (error) {
+      console.error('Error submitting appointment:', error)
+      toast({
+        title: "Error",
+        description: "Failed to book appointment. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
   
   return (
@@ -285,8 +336,8 @@ export default function AppointmentPage() {
                     <Button type="button" variant="outline" onClick={() => setStep(1)}>
                       Back
                     </Button>
-                    <Button type="submit">
-                      Book Appointment
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? "Booking..." : "Book Appointment"}
                     </Button>
                   </div>
                 </form>
