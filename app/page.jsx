@@ -87,11 +87,11 @@ export default async function Home() {
             
             <div className="flex justify-center lg:justify-end animate-fade-in animation-delay-500">
               <div className="relative w-[280px] h-[350px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-2xl shadow-2xl animate-float">
-                {/* Add decorative elements behind image */}
+                {/* Add decorative elements behind image
                 <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-400 rounded-full opacity-70 z-0 animate-blob"></div>
-                <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0 animate-blob animation-delay-2000"></div>
+                <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-300 rounded-full opacity-70 z-0 animate-blob animation-delay-2000"></div> */}
                 <Image
-                  src="/doctor.jpg"
+                  src="/doctor.svg"
                   alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover z-10 relative transition-transform duration-500 hover:scale-105 hover:rotate-1"

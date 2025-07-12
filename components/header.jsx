@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { Calendar, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -38,11 +39,14 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center p-0.5 transition-transform duration-300 group-hover:scale-110">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <span className="text-blue-700 font-bold text-lg">DR</span>
-                </div>
-              </div>
+              <Image
+                src="/doctorcircle.svg"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="rounded-full transition-transform duration-300 group-hover:scale-110"
+                priority
+              />
               <div>
                 <p className="font-bold text-blue-900 text-lg leading-tight">Dr. Partha Pratim Paul</p>
                 <p className="text-xs text-blue-600 -mt-1">Obstetrician & Gynecologist</p>

@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-start animate-fade-in order-2 lg:order-1">
               <div className="relative w-[280px] h-[350px] sm:w-[400px] sm:h-[500px] overflow-hidden rounded-2xl shadow-xl transform hover:translate-y-[-5px] transition-all duration-500 group">
                 <Image
-                  src="/doctor.jpg"
+                  src="/doctor.svg"
                   alt="Dr. Partha Pratim Paul"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
