@@ -52,7 +52,7 @@ export default function ServicesPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center mb-16 animate-fade-in">
             <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
               <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
-              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Cardiac Care</span>
+              <span className="px-3 py-2 rounded-full bg-blue-100 text-blue-700 text-sm h-10 font-medium shadow-sm">Obstetric Care, Gynecological care, infertility</span>
               <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 animate-gradient-x">
@@ -65,11 +65,11 @@ export default function ServicesPage() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service cards with enhanced styling */}
+            {/* Obstetric Care */}
             <div className="group transform transition-all duration-500 hover:-translate-y-2">
               <ServiceCard
-                title="Cardiac Consultation"
-                description="Comprehensive evaluation of your heart health with personalized recommendations and treatment plans."
+                title="Obstetric Care"
+                description="Comprehensive prenatal, delivery, and postnatal care including management of high-risk pregnancies and obstetric emergencies."
                 icon="Heart"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
@@ -77,59 +77,11 @@ export default function ServicesPage() {
               />
               <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
             </div>
-            
+            {/* Gynecological Care */}
             <div className="group transform transition-all duration-500 hover:-translate-y-2">
               <ServiceCard
-                title="Echocardiography"
-                description="Advanced ultrasound imaging to assess heart structure and function, detecting abnormalities and guiding treatment."
-                icon="Activity"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Electrocardiogram (ECG)"
-                description="Recording of the heart's electrical activity to detect arrhythmias, heart attacks, and other cardiac conditions."
-                icon="Zap"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Stress Testing"
-                description="Evaluation of heart function during physical activity to diagnose coronary artery disease and assess exercise capacity."
-                icon="Timer"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Holter Monitoring"
-                description="Continuous ECG recording over 24-48 hours to detect irregular heart rhythms during daily activities."
-                icon="LineChart"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Preventive Cardiology"
-                description="Strategies to prevent heart disease through risk assessment, lifestyle modifications, and preventive medications."
+                title="Gynecological Care"
+                description="Expert diagnosis and treatment of gynecological conditions, preventive screenings, and minimally invasive procedures."
                 icon="Shield"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
@@ -137,36 +89,12 @@ export default function ServicesPage() {
               />
               <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
             </div>
-            
+            {/* Infertility Management */}
             <div className="group transform transition-all duration-500 hover:-translate-y-2">
               <ServiceCard
-                title="Cardiac Rehabilitation"
-                description="Supervised program to improve cardiovascular health after a heart attack, heart surgery, or heart failure."
-                icon="RefreshCw"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Hypertension Management"
-                description="Comprehensive approach to controlling high blood pressure through medication, lifestyle changes, and monitoring."
-                icon="TrendingDown"
-                detailed
-                className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
-                iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
-              />
-              <div className="h-1 w-0 bg-blue-600 group-hover:w-full transition-all duration-700 ease-out rounded-b-lg"></div>
-            </div>
-            
-            <div className="group transform transition-all duration-500 hover:-translate-y-2">
-              <ServiceCard
-                title="Lipid Management"
-                description="Assessment and treatment of cholesterol disorders to reduce the risk of heart disease and stroke."
-                icon="Droplet"
+                title="Infertility Management"
+                description="Comprehensive infertility evaluation and treatment including ovulation induction, IUI, and pre-IVF consultations."
+                icon="Activity"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                 iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"

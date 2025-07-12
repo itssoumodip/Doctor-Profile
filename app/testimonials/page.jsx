@@ -294,24 +294,6 @@ export default function TestimonialsPage() {
               </div>
             </div>
           </div>
-          
-          {/* More attractive pagination */}
-          <div className="flex justify-center mt-16">
-            <div className="inline-flex items-center gap-2 p-1 rounded-full bg-blue-50 shadow-md">
-              <button className="w-10 h-10 rounded-full inline-flex items-center justify-center bg-blue-600 text-white shadow">
-                1
-              </button>
-              <button className="w-10 h-10 rounded-full inline-flex items-center justify-center hover:bg-blue-100 transition-colors duration-200 text-blue-700">
-                2
-              </button>
-              <button className="w-10 h-10 rounded-full inline-flex items-center justify-center hover:bg-blue-100 transition-colors duration-200 text-blue-700">
-                3
-              </button>
-              <button className="w-8 h-10 rounded-full inline-flex items-center justify-center hover:bg-blue-100 transition-colors duration-200 text-blue-700">
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
         </div>
       </section>
     </main>

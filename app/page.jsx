@@ -145,9 +145,9 @@ export default function Home() {
               <div className="bg-white rounded-xl p-6 shadow-lg hover-lift border border-gray-100 group">
                 <StatCounter
                   icon={<Clock className="h-8 w-8 mb-2 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />}
-                  value={10}
+                  value={13}
                   suffix="+"
-                  label="Years of Experience"
+                  label="overall experience"
                   duration={1500}
                   className="glass-effect"
                 />
