@@ -15,29 +15,19 @@ import { Star } from "lucide-react"
 /**
  * @param {TestimonialCardProps} props
  */
-export function TestimonialCard({ name, age, condition, quote, rating, image }) {
+export function TestimonialCard({ name, age, condition, quote, rating }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg">
-      <div className="flex items-center mb-4">
-        <div className="h-16 w-16 mr-4 overflow-hidden rounded-full">
-          {/* Using a regular img tag instead of Next.js Image */}
-          <img 
-            src={image} 
-            alt={`${name}'s photo`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold text-blue-900">{name}</h3>
-          <p className="text-sm text-gray-600">{age} years, {condition}</p>
-          <div className="flex mt-1">
-            {[...Array(5)].map((_, i) => (
-              <Star 
-                key={i} 
-                className={`h-4 w-4 ${i < rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`} 
-              />
-            ))}
-          </div>
+      <div className="mb-4">
+        <h3 className="text-xl font-semibold text-blue-900">{name}</h3>
+        <p className="text-sm text-gray-600">{age} years, {condition}</p>
+        <div className="flex mt-1">
+          {[...Array(5)].map((_, i) => (
+            <Star 
+              key={i} 
+              className={`h-4 w-4 ${i < rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`} 
+            />
+          ))}
         </div>
       </div>
       <blockquote>

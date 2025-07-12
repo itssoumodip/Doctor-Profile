@@ -60,8 +60,7 @@ export default function TestimonialsManagementPage() {
     age: '',
     condition: '',
     quote: '',
-    rating: 5,
-    image: '/placeholder-user.jpg',
+    rating: 5
   });
   const [editingId, setEditingId] = useState(null);
   const { toast } = useToast();
@@ -129,7 +128,6 @@ export default function TestimonialsManagementPage() {
         condition: '',
         quote: '',
         rating: 5,
-        image: '/placeholder-user.jpg',
       });
       
       fetchTestimonials();
@@ -152,7 +150,6 @@ export default function TestimonialsManagementPage() {
       condition: testimonial.condition,
       quote: testimonial.quote,
       rating: testimonial.rating,
-      image: testimonial.image || '/placeholder-user.jpg',
     });
   };
 
@@ -181,7 +178,6 @@ export default function TestimonialsManagementPage() {
         condition: '',
         quote: '',
         rating: 5,
-        image: '/placeholder-user.jpg',
       });
       
       fetchTestimonials();
@@ -283,17 +279,6 @@ export default function TestimonialsManagementPage() {
                   onChange={(e) => handleInputChange('quote', e.target.value)}
                 />
               </div>
-
-              <div>
-                <Label htmlFor="image">Patient Image URL</Label>
-                <Input 
-                  id="image" 
-                  placeholder="/placeholder-user.jpg" 
-                  value={formData.image}
-                  onChange={(e) => handleInputChange('image', e.target.value)}
-                />
-                <p className="text-xs text-gray-500 mt-1">Leave as default for placeholder image</p>
-              </div>
               
               <div>
                 <Label htmlFor="rating">Rating (1-5 stars)</Label>
@@ -332,7 +317,6 @@ export default function TestimonialsManagementPage() {
                         condition: '',
                         quote: '',
                         rating: 5,
-                        image: '/placeholder-user.jpg',
                       });
                     }}>
                       Cancel
@@ -388,16 +372,6 @@ export default function TestimonialsManagementPage() {
                       <TableRow key={testimonial.id}>
                         <TableCell>
                           <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 rounded-full overflow-hidden">
-                              <img
-                                src={testimonial.image || '/placeholder-user.jpg'}
-                                alt={testimonial.name}
-                                className="h-full w-full object-cover"
-                                onError={(e) => {
-                                  e.target.src = '/placeholder-user.jpg';
-                                }}
-                              />
-                            </div>
                             <div>
                               <p className="font-medium">{testimonial.name}</p>
                               <p className="text-sm text-gray-500">{testimonial.age} years</p>
@@ -482,16 +456,6 @@ export default function TestimonialsManagementPage() {
                               </DialogHeader>
                               <div className="space-y-4 mt-4">
                                 <div className="flex items-center gap-4">
-                                  <div className="h-16 w-16 rounded-full overflow-hidden">
-                                    <img
-                                      src={testimonial.image || '/placeholder-user.jpg'}
-                                      alt={testimonial.name}
-                                      className="h-full w-full object-cover"
-                                      onError={(e) => {
-                                        e.target.src = '/placeholder-user.jpg';
-                                      }}
-                                    />
-                                  </div>
                                   <div>
                                     <h3 className="font-semibold text-lg">{testimonial.name}</h3>
                                     <p className="text-gray-500">{testimonial.age} years, {testimonial.condition}</p>

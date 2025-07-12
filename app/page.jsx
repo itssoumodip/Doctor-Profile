@@ -8,8 +8,18 @@ import { TestimonialSlider } from "@/components/testimonial-slider"
 import { FallbackImage } from "@/components/fallback-image"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { BackToTopButton } from "@/components/back-to-top-button"
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '@/lib/firebase'
 
-export default function Home() {
+export default async function Home() {
+  // Fetch testimonials from Firebase server-side
+  const testimonialsCollection = collection(db, 'testimonials');
+  const snapshot = await getDocs(testimonialsCollection);
+  const testimonials = snapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }));
+
   return (
     <main className="flex flex-col min-h-screen overflow-hidden">
       <section className="relative w-full py-12 md:py-24 lg:py-32 bg-[#ebf5ffc0] overflow-hidden">
@@ -531,7 +541,7 @@ export default function Home() {
           </div>
           
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 shadow-xl mb-12">
-            <TestimonialSlider />
+            <TestimonialSlider testimonials={testimonials} />
           </div>
           
           <div className="flex justify-center mt-10">
