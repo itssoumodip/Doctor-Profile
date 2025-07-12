@@ -21,6 +21,14 @@ const TIME_SLOTS = [
   "4:00 PM", "4:30 PM"
 ]
 
+// Helper to format date as YYYY-MM-DD in local time
+function formatDateLocalYYYYMMDD(date) {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 export default function AppointmentPage() {
   const [step, setStep] = useState(1)
   const [selectedDate, setSelectedDate] = useState(null)
@@ -234,17 +242,17 @@ export default function AppointmentPage() {
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
                   {Array.from({ length: 14 }, (_, i) => {
-                    const date = new Date()
-                    date.setDate(date.getDate() + i + 1) // Skip today, start from tomorrow
-                    return date
+                    const date = new Date();
+                    date.setHours(0, 0, 0, 0); // Reset to midnight local time
+                    date.setDate(date.getDate() + i); // Start from today
+                    return date;
                   }).map((date) => {
-                    const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-                    const dayStr = date.toLocaleDateString('en-US', { weekday: 'short' })
-                    const fullDate = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
-                    
+                    const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    const dayStr = date.toLocaleDateString('en-US', { weekday: 'short' });
+                    const fullDate = formatDateLocalYYYYMMDD(date);
                     return (
                       <button
-                        key={dateStr}
+                        key={fullDate}
                         type="button"
                         className={cn(
                           "p-3 border rounded-md hover:border-blue-500 text-center transition-colors",
@@ -257,7 +265,7 @@ export default function AppointmentPage() {
                         <div className="font-medium">{dayStr}</div>
                         <div className="text-sm">{dateStr}</div>
                       </button>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -269,8 +277,28 @@ export default function AppointmentPage() {
                     Select Time
                   </h2>
                   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-                    {TIME_SLOTS.map((time) => {
-                      const isBooked = bookedSlots.includes(time)
+                    {TIME_SLOTS.filter((time) => {
+                      if (!selectedDate) return true;
+                      const now = new Date();
+                      const selected = new Date(selectedDate);
+                      if (
+                        now.getFullYear() === selected.getFullYear() &&
+                        now.getMonth() === selected.getMonth() &&
+                        now.getDate() === selected.getDate()
+                      ) {
+                        // Only show times that are in the future for today
+                        // Parse the time string to a Date object on today
+                        const [h, m, ampm] = time.match(/(\d+):(\d+) (AM|PM)/).slice(1);
+                        let hour = parseInt(h, 10);
+                        if (ampm === 'PM' && hour !== 12) hour += 12;
+                        if (ampm === 'AM' && hour === 12) hour = 0;
+                        const slotDate = new Date(selectedDate);
+                        slotDate.setHours(hour, parseInt(m, 10), 0, 0);
+                        return slotDate > now;
+                      }
+                      return true;
+                    }).map((time) => {
+                      const isBooked = bookedSlots.includes(time);
                       return (
                         <button
                           key={time}

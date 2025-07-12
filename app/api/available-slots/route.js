@@ -24,7 +24,7 @@ export async function GET(request) {
     const q = query(
       appointmentsRef, 
       where('appointmentDate', '==', date),
-      where('status', '==', 'approved')
+      where('status', 'in', ['approved', 'confirmed'])
     )
     
     const snapshot = await getDocs(q)
@@ -72,7 +72,7 @@ export async function POST(request) {
       appointmentsRef,
       where('appointmentDate', '==', date),
       where('appointmentTime', '==', time),
-      where('status', '==', 'approved')
+      where('status', 'in', ['approved', 'confirmed'])
     )
     
     const snapshot = await getDocs(q)
