@@ -51,7 +51,7 @@ async function sendContactEmail(contactData) {
     // Create email content with modern and professional template
     const mailOptions = {
       from: process.env.SMTP_EMAIL,
-      to: process.env.CONTACT_RECIPIENT_EMAIL || process.env.SMTP_EMAIL, // Where to send contact form submissions
+      to: process.env.CONTACT_RECIPIENT_EMAIL,
       replyTo: contactData.email,
       subject: `Contact Form: ${contactData.subject || 'New Message from Website'}`,
       html: `
