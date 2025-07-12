@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
 import { BackToTopButton } from "@/components/back-to-top-button"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -30,12 +31,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="space-y-5 transform transition-all duration-500 hover:-translate-y-1">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 to-blue-600 flex items-center justify-center shadow-lg p-0.5 group">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <span className="text-blue-900 font-bold text-xl relative z-10">DR</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-200 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                </div>
-              </div>
+              <Image
+                src="/doctorcircle.svg"
+                alt="Dr. Partha Pratim Paul"
+                width={48}
+                height={48}
+                className="rounded-full object-cover shadow-lg group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
               <h3 className="text-xl font-bold text-white">Dr. Partha Pratim Paul</h3>
             </div>
             
