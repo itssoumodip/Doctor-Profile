@@ -242,7 +242,7 @@ export default function TestimonialsManagementPage() {
                   <Label htmlFor="name">Patient Name</Label>
                   <Input 
                     id="name" 
-                    placeholder="John Doe" 
+                    placeholder="full name" 
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
                   />
