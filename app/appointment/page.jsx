@@ -299,6 +299,32 @@ export default function AppointmentPage() {
                       return true;
                     }).map((time) => {
                       const isBooked = bookedSlots.includes(time);
+                      if (isBooked) {
+                        return (
+                          <button
+                            key={time}
+                            type="button"
+                            disabled
+                            className={cn(
+                              "p-3 border rounded-md text-center transition-colors relative",
+                              "bg-red-50 border-red-200 text-red-500 cursor-not-allowed opacity-80"
+                            )}
+                          >
+                            <div className="flex flex-col items-center">
+                              <span className="text-lg font-semibold">{time}</span>
+                              <span className="flex items-center gap-1 mt-1 text-xs font-medium">
+                                <svg className="h-4 w-4 text-red-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                                  <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" strokeWidth="2" />
+                                  <circle cx="12" cy="16" r="1" fill="currentColor" />
+                                </svg>
+                                Booked
+                              </span>
+                            </div>
+                            <div className="absolute inset-0 rounded-md bg-white opacity-50 pointer-events-none"></div>
+                          </button>
+                        );
+                      }
                       return (
                         <button
                           key={time}
@@ -307,20 +333,13 @@ export default function AppointmentPage() {
                             "p-3 border rounded-md hover:border-blue-500 text-center transition-colors",
                             selectedTime === time 
                               ? "bg-blue-900 text-white border-blue-900" 
-                              : "bg-white border-gray-200",
-                            isBooked && "opacity-50 cursor-not-allowed"
+                              : "bg-white border-gray-200"
                           )}
-                          onClick={() => !isBooked && setSelectedTime(time)}
-                          disabled={isBooked}
+                          onClick={() => setSelectedTime(time)}
                         >
                           {time}
-                          {isBooked && (
-                            <span className="ml-1 text-red-500" title="Booked">
-                              <AlertCircle className="h-4 w-4" />
-                            </span>
-                          )}
                         </button>
-                      )
+                      );
                     })}
                   </div>
                 </div>

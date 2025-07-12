@@ -16,10 +16,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <script src="/suppress-errors.js" async />
-      </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <script src="/suppress-errors.js" async />
         <ErrorSuppressor />
         <AdminAuthProvider>
           <div className="flex flex-col min-h-screen w-full mx-auto">
