@@ -126,50 +126,43 @@ export default function ServicesPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl mt-4">
-              What to expect when you choose our cardiac care services
+              What to expect when you choose our women's healthcare services
             </p>
           </div>
-          
           {/* Updated process timeline */}
           <div className="relative">
-            {/* Connector Line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-500 to-blue-200 transform -translate-y-1/2 z-0"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
               {/* Step 1 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4 border-4 border-white shadow-lg transition-transform group-hover:scale-110 duration-300">
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">1</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-800">Initial Consultation</h3>
-                <p className="text-gray-600">Comprehensive evaluation of your cardiac health and medical history</p>
+                <p className="text-gray-600">Comprehensive evaluation of your reproductive and gynecological health and medical history</p>
               </div>
-              
               {/* Step 2 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4 border-4 border-white shadow-lg">
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">2</div>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-blue-800">Diagnostic Testing</h3>
-                <p className="text-gray-600">Specialized tests to accurately diagnose your condition</p>
+                <p className="text-gray-600">Specialized tests to accurately diagnose gynecological or fertility conditions</p>
               </div>
-              
               {/* Step 3 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4 border-4 border-white shadow-lg">
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">3</div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-blue-800">Treatment Plan</h3>
-                <p className="text-gray-600">Personalized care plan tailored to your specific cardiac needs</p>
+                <h3 className="text-xl font-bold mb-2 text-blue-800">Personalized Treatment Plan</h3>
+                <p className="text-gray-600">Care plan tailored to your specific needs, including obstetric, gynecological, or fertility treatments</p>
               </div>
-              
               {/* Step 4 */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4 border-4 border-white shadow-lg">
                   <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">4</div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-blue-800">Follow-up Care</h3>
-                <p className="text-gray-600">Ongoing support and monitoring to ensure optimal heart health</p>
+                <h3 className="text-xl font-bold mb-2 text-blue-800">Ongoing Support & Follow-up</h3>
+                <p className="text-gray-600">Continuous care and support throughout your health journey</p>
               </div>
             </div>
           </div>
