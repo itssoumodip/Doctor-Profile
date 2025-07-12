@@ -236,7 +236,7 @@ export default async function Home() {
             </ScrollReveal>
             
             <ScrollReveal delay={200} animation="animate-slide-up">
-              <div className="group transform transition-all duration-500 hover:-translate-y-2">
+              <div className="group transform transition-all duration-500 hover:-translate-y-2 h-full">
                 <ServiceCard
                   title="Infertility Management"
                   description="Comprehensive infertility evaluation and treatment including ovulation induction, IUI, and pre-IVF consultations."

@@ -451,7 +451,7 @@ export default function AboutPage() {
                       </div>
                       <span className="text-xs font-semibold text-white uppercase tracking-wider">Next Available</span>
                     </div>
-                    <p className="text-white font-medium text-lg">Tomorrow, 10:00 AM - 4:00 PM</p>
+                    <p className="text-white font-medium text-lg">Tomorrow, 9:00 AM - 4:00 PM</p>
                     <p className="text-white/80 text-sm mt-1">Book early for preferred time slots</p>
                   </div>
                 </div>

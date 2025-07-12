@@ -130,7 +130,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Phone</p>
-                    <p className="text-gray-600">(+91) 000000000</p>
+                    <p className="text-gray-600">(+91) 9876543210</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Email</p>
-                    <p className="text-gray-600">gmail.com</p>
+                    <p className="text-gray-600">dr.parthapaul@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Address</p>
-                    <p className="text-gray-600">kolkata</p>
+                    <p className="text-gray-600">123 Park Street, Kolkata, West Bengal 700016</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -157,13 +157,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Office Hours</p>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
+                    <p className="text-gray-600">Monday - Friday: 10:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600">Saturday: 10:00 AM - 2:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
-              <div className="animate-fade-in animation-delay-300">
+              {/* <div className="animate-fade-in animation-delay-300">
                 <h3 className="text-xl font-bold text-blue-900 mb-4">Connect With Us</h3>
                 <div className="flex gap-4">
                   <SocialIcon platform="facebook" />
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   <SocialIcon platform="linkedin" />
                   <SocialIcon platform="youtube" />
                 </div>
-              </div>
+              </div> */}
               <div className="animate-fade-in animation-delay-400">
                 <h3 className="text-xl font-bold text-blue-900 mb-4">Emergency Contact</h3>
                 <div className="bg-red-50 border-l-4 border-red-500 p-4">
@@ -294,7 +294,7 @@ export default function ContactPage() {
       <Toaster />
 
       {/* FAQ Section */}
-      <section className="w-full py-12 md:py-24 bg-gray-50">
+      {/* <section className="w-full py-12 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-blue-900 animate-fade-in">
@@ -366,7 +366,7 @@ export default function ContactPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
