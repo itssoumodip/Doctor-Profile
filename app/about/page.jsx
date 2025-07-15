@@ -159,13 +159,13 @@ export default function AboutPage() {
               Academic excellence and continuous professional development in obstetrics and gynecology
             </p>
           </div>
-          <div className="grid gap-10 md:grid-cols-2 items-start">
+          <div className="grid gap-10 md:grid-cols-1 items-start">
             <div className="space-y-8 animate-fade-in animation-delay-200 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-blue-100">
               <h3 className="text-2xl font-bold text-blue-800 flex items-center gap-3 pb-4 border-b border-blue-100">
                 <div className="p-2 bg-blue-100 rounded-full">
                   <GraduationCap className="h-6 w-6 text-blue-700" />
                 </div>
-                Education
+                Education & Qualifications
               </h3>
               <Timeline
                 items={[
@@ -174,67 +174,52 @@ export default function AboutPage() {
                     title: "Fellowship in Cosmetic Gynecology",
                     institution: "Advanced Training Institute",
                     description: "Specialized training in cosmetic gynecological procedures and aesthetic treatments.",
+                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
                   },
                   {
                     year: "2025",
                     title: "FMAS - Fellowship in Minimal Access Surgery",
                     institution: "AMASI (Association of Minimal Access Surgeons of India)",
                     description: "Advanced training in laparoscopic and minimally invasive surgical techniques.",
+                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
                   },
                   {
                     year: "2020",
                     title: "DNB (Gynecology and Obstetrics)",
                     institution: "Dr. L H Hiranandani Hospital, Powai, Mumbai",
                     description: "Postgraduate specialization in obstetrics and gynecology from National Board Examinations.",
+                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
                   },
                   {
                     year: "2015",
                     title: "MBBS",
                     institution: "R G Kar Medical College, Kolkata",
                     description: "Bachelor of Medicine and Bachelor of Surgery from West Bengal University of Health Sciences.",
-                  }
+                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
+                  },
+                  {
+                    year: "",
+                    title: "Fellowship Certifications",
+                    institution: "Multiple fellowships including Minimal Access Surgery (FMAS) and Cosmetic Gynecology",
+                    description: "Completed",
+                    icon: <GraduationCap className='h-5 w-5 text-green-700' />,
+                  },
+                  {
+                    year: "",
+                    title: "MRCOG Part 1",
+                    institution: "Membership of the Royal College of Obstetricians and Gynaecologists",
+                    description: "Completed",
+                    icon: <GraduationCap className='h-5 w-5 text-green-700' />,
+                  },
+                  {
+                    year: "",
+                    title: "WBMC Registration",
+                    institution: "West Bengal Medical Council - Registration No: 70044",
+                    description: "Active License",
+                    icon: <Award className='h-5 w-5 text-blue-700' />,
+                  },
                 ]}
               />
-            </div>
-            <div className="space-y-8 animate-fade-in animation-delay-300 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-blue-100">
-              <h3 className="text-2xl font-bold text-blue-800 flex items-center gap-3 pb-4 border-b border-blue-100">
-                <div className="p-2 bg-blue-100 rounded-full">
-                  <Award className="h-6 w-6 text-blue-700" />
-                </div>
-                Certifications & Awards
-              </h3>
-              <ul className="space-y-5">
-                <li className="bg-white p-5 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md border border-gray-100 hover:border-blue-200 hover:translate-y-[-2px]">
-                  <div className="flex items-start gap-3">
-                    <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">MRCOG Part 1 Completed</h4>
-                      <p className="text-gray-600">Successfully completed Part 1 of the Membership of the Royal College of Obstetricians and Gynaecologists</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Completed 2024</span>
-                    </div>
-                  </div>
-                </li>
-                <li className="bg-white p-5 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md border border-gray-100 hover:border-blue-200 hover:translate-y-[-2px]">
-                  <div className="flex items-start gap-3">
-                    <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">WBMC Registration</h4>
-                      <p className="text-gray-600">Registered with West Bengal Medical Council - Registration No: 70044</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Active License</span>
-                    </div>
-                  </div>
-                </li>
-                <li className="bg-white p-5 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md border border-gray-100 hover:border-blue-200 hover:translate-y-[-2px]">
-                  <div className="flex items-start gap-3">
-                    <Star className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-lg">Fellowship Certifications</h4>
-                      <p className="text-gray-600">Multiple fellowships including Minimal Access Surgery (FMAS) and Cosmetic Gynecology</p>
-                      <span className="text-xs font-medium text-blue-600 mt-2 inline-block bg-blue-50 px-2 py-1 rounded-md">Ongoing 2025</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
