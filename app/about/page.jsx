@@ -251,7 +251,7 @@ export default function AboutPage() {
               <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             </h2>
             <p className="max-w-[800px] text-gray-600 md:text-xl mt-6">
-              Contributing to the advancement of cardiac medicine through groundbreaking research and insightful publications
+              Contributing to the advancement of women's health through groundbreaking research and insightful publications
             </p>
           </div>
           
@@ -269,23 +269,23 @@ export default function AboutPage() {
               </div>
               
               <h4 className="text-xl font-bold text-blue-800 mb-3 hover:text-blue-700 transition-colors">
-                Advances in Cardiac Imaging Techniques
+                Advances in Gynecological Imaging Techniques
               </h4>
               
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                <p className="text-gray-600 text-sm">Published in American Heart Journal • June 2023</p>
+                <p className="text-gray-600 text-sm">Published in Journal of Obstetrics and Gynecology • June 2023</p>
               </div>
               
               <p className="text-gray-700 flex-grow">
-                This research explores innovative cardiac imaging methods that provide clearer visualization of heart structures and function, leading to more accurate diagnoses and improved treatment planning.
+                This research explores innovative gynecological imaging methods that provide clearer visualization of reproductive structures and function, leading to more accurate diagnoses and improved treatment planning in women's health.
               </p>
               
-              <div className="mt-6 pt-4 border-t border-gray-200">
+              {/* <div className="mt-6 pt-4 border-t border-gray-200">
                 <a href="#" className="text-blue-700 hover:text-blue-800 font-medium text-sm flex items-center gap-1 group">
                   Read Publication <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-              </div>
+              </div> */}
             </div>
 
             {/* Repeat similar structure for other publication cards */}
@@ -301,23 +301,23 @@ export default function AboutPage() {
               </div>
               
               <h4 className="text-xl font-bold text-blue-800 mb-3 hover:text-blue-700 transition-colors">
-                Preventative Cardiology Approaches
+                Preventative Gynecology Approaches
               </h4>
               
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                <p className="text-gray-600 text-sm">Published in Journal of Cardiology • March 2022</p>
+                <p className="text-gray-600 text-sm">Published in Journal of Gynecological Research • March 2022</p>
               </div>
               
               <p className="text-gray-700 flex-grow">
-                This study examines the effectiveness of various preventative cardiology strategies in reducing the incidence of heart disease in high-risk populations, with promising results for lifestyle interventions.
+                This study examines the effectiveness of various preventative gynecology strategies in reducing the incidence of gynecological diseases in high-risk populations, with promising results for lifestyle and early screening interventions.
               </p>
-              
+{/*               
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <a href="#" className="text-blue-700 hover:text-blue-800 font-medium text-sm flex items-center gap-1 group">
                   Read Publication <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl border border-blue-100/50 h-full flex flex-col animate-fade-in animation-delay-400 hover:translate-y-[-5px]">
@@ -332,27 +332,27 @@ export default function AboutPage() {
               </div>
               
               <h4 className="text-xl font-bold text-blue-800 mb-3 hover:text-blue-700 transition-colors">
-                Modern Treatment of Arrhythmias
+                Modern Approaches to Endometriosis Treatment
               </h4>
               
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                <p className="text-gray-600 text-sm">Published in Cardiac Health • January 2024</p>
+                <p className="text-gray-600 text-sm">Published in International Journal of Gynecology • January 2024</p>
               </div>
               
               <p className="text-gray-700 flex-grow">
-                This publication details breakthrough treatments for cardiac arrhythmias, including minimally invasive procedures that significantly reduce recovery time and improve long-term patient outcomes.
+                This publication details breakthrough treatments for endometriosis, including minimally invasive laparoscopic procedures that significantly reduce recovery time and improve long-term patient outcomes for women.
               </p>
               
-              <div className="mt-6 pt-4 border-t border-gray-200">
+              {/* <div className="mt-6 pt-4 border-t border-gray-200">
                 <a href="#" className="text-blue-700 hover:text-blue-800 font-medium text-sm flex items-center gap-1 group">
                   Read Publication <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
           
-          <div className="flex justify-center mt-16 animate-fade-in animation-delay-500">
+          {/* <div className="flex justify-center mt-16 animate-fade-in animation-delay-500">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 font-medium text-base rounded-full shadow-lg hover:shadow-blue-200/50 px-8 py-6">
               <Link href="/" className="flex items-center gap-3">
                 View All Publications 
@@ -361,7 +361,7 @@ export default function AboutPage() {
                 </span>
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
         
         {/* Modern curved section divider */}

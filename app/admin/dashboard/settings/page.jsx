@@ -27,7 +27,7 @@ export default function SettingsPage() {
     email: 'doctor@example.com',
     phone: '+1 (555) 123-4567',
     address: '123 Medical Center Dr, Healthcare City, HC 12345',
-    bio: 'Providing exceptional cardiac care with over 15 years of experience.',
+    bio: 'Providing exceptional women\'s healthcare with over 15 years of experience.',
     education: 'MD - Harvard Medical School, Residency - Johns Hopkins',
     certifications: 'Board Certified Cardiologist, Fellow of American College of Cardiology'
   })

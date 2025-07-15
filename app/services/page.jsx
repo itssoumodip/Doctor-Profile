@@ -33,7 +33,7 @@ export default function ServicesPage() {
             </h1>
             
             <p className="max-w-[800px] text-gray-700 md:text-xl lg:text-2xl animate-fade-in animation-delay-200">
-              Comprehensive cardiac care services tailored to your <span className="text-blue-700 font-semibold">individual needs</span>
+              Comprehensive women's healthcare services tailored to your <span className="text-blue-700 font-semibold">individual needs</span>
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full mx-auto my-2 transform transition-all duration-500 hover:w-32"></div>
             <p className="max-w-[700px] mx-auto text-gray-600 md:text-xl mt-4">
-              Advanced cardiac care services using the latest technology and evidence-based approaches
+              Advanced obstetric and gynecological care using the latest technology and evidence-based approaches
             </p>
           </div>
           
@@ -199,7 +199,7 @@ export default function ServicesPage() {
                 Ready to Take the <span className="text-blue-300">First Step?</span>
               </h2>
               <p className="text-blue-100 max-w-2xl md:text-lg">
-                Schedule a consultation today and start your journey to better heart health with personalized cardiac care.
+                Schedule a consultation today and start your journey to better women's health with personalized gynecological and obstetric care.
               </p>
             </div>
             <div className="md:col-span-2 flex flex-col sm:flex-row gap-4 justify-end">

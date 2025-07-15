@@ -304,7 +304,7 @@ export default async function Home() {
             </ScrollReveal>
           </div>
           
-          <div className="flex justify-center mt-12">
+          {/* <div className="flex justify-center mt-12">
             <Button
               variant="outline"
               className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 transition-all duration-300 group transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
@@ -315,7 +315,7 @@ export default async function Home() {
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-          </div>
+          </div> */}
           
           {/* Mobile view indicator dots - only visible on smaller screens */}
           <div className="flex justify-center mt-8 gap-1 sm:hidden">
@@ -503,14 +503,14 @@ export default async function Home() {
             </div>
           </div>
           
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <Button variant="outline" className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50">
               <Link href="/process" className="flex items-center gap-2">
                 Learn More About Our Process
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
