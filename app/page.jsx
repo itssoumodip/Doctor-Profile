@@ -336,7 +336,7 @@ export default async function Home() {
           <div className="text-center mb-12">
             <div className="flex items-center gap-2 mb-2 justify-center transform transition-all duration-300 hover:scale-105">
               <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
-              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Why Choose Dr.</span>
+              <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium shadow-sm">Why Choose Dr. Partha Pratim Paul</span>
               <span className="h-px w-8 bg-blue-500 hidden sm:block"></span>
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 mt-2">World-Class Women's Healthcare</h2>
@@ -398,7 +398,7 @@ export default async function Home() {
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  Non-invasive cardiac imaging
+                  Non-invasive gynecological imaging
                 </li>
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

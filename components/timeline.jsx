@@ -22,9 +22,8 @@ export function Timeline({ items, title }) {
         {items.map((item, index) => (
           <div key={index} className="relative pl-8 border-l-2 border-blue-200">
             <div className="absolute left-[-8px] top-0 w-4 h-4 bg-blue-900 rounded-full"></div>
-            <div className="text-sm font-medium text-blue-900 mb-1">{item.year}</div>
             <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-            <div className="text-gray-600 mb-1">{item.institution}</div>
+            <div className="text-gray-600 mt-2 mb-1">{item.institution}</div>
             {item.description && (
               <p className="text-gray-600 text-sm">{item.description}</p>
             )}
