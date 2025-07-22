@@ -110,20 +110,6 @@ export default function AboutPage() {
                   "My mission is to provide compassionate women's healthcare that transforms lives through expert obstetric and gynecological care."
                 </blockquote>
               </div>
-              <div className="flex flex-wrap gap-3 mt-6">
-                <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors cursor-default">
-                  Award Winner 2023
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors cursor-default">
-                  Research Excellence
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors cursor-default">
-                  Patient Choice Award
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors cursor-default">
-                  Top Medical Educator
-                </span>
-              </div>
             </div>
           </div>
         </div>
