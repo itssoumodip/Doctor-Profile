@@ -23,13 +23,13 @@ import {
 export default function SettingsPage() {
   const [doctorInfo, setDoctorInfo] = useState({
     name: 'Dr. Partha Pratim Paul',
-    specialty: 'Cardiologist & Heart Specialist',
-    email: 'doctor@example.com',
-    phone: '+1 (555) 123-4567',
-    address: '123 Medical Center Dr, Healthcare City, HC 12345',
+    specialty: 'Obstetrician & Gynaecologist',
+    email: 'ppp.obgy@gmail.com, ppp.dnb.in.mumbai@gmail.com',
+    phone: '+91 9876543210',
+    address: '1. Dum Dum, Kolkata, West Bengal, India; 2. Kalyani, Nadia, West Bengal, India',
     bio: 'Providing exceptional women\'s healthcare with over 15 years of experience.',
-    education: 'MD - Harvard Medical School, Residency - Johns Hopkins',
-    certifications: 'Board Certified Cardiologist, Fellow of American College of Cardiology'
+    education: 'MD - [Your Medical School], Residency - [Your Residency]',
+    certifications: 'Board Certified, Fellow of [Your College]'
   })
 
   const [systemSettings, setSystemSettings] = useState({

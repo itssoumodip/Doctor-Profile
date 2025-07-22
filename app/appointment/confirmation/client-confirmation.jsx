@@ -97,8 +97,8 @@ export default function ClientConfirmation() {
                 If you need to modify or cancel your appointment, please contact us:
               </p>
               <div className="text-sm space-y-1">
-                <p><strong>Email:</strong> {process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com"}</p>
-                <p><strong>Phone:</strong> {process.env.NEXT_PUBLIC_CONTACT_PHONE || "+1 (555) 123-4567"}</p>
+                <p><strong>Email:</strong> ppp.obgy@gmail.com, ppp.dnb.in.mumbai@gmail.com</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
               </div>
             </div>
 

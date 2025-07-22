@@ -216,6 +216,11 @@ export default function ServicesPage() {
                 </Link>
               </Button>
             </div>
+            {/* Contact Info Block */}
+            <div className="mt-8 text-white text-sm space-y-1">
+              <div><strong>Phone:</strong> (+91) 9876543210</div>
+              <div><strong>Email:</strong> ppp.obgy@gmail.com, ppp.dnb.in.mumbai@gmail.com</div>
+            </div>
           </div>
         </div>
       </section>

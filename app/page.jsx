@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Award, Calendar, Clock, MapPin, Phone, Star, Users } from "lucide-react"
+import { ArrowRight, Award, Calendar, Clock, MapPin, Phone, Star, Users, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StatCounter } from "@/components/stat-counter"
 import { ServiceCard } from "@/components/service-card"
@@ -599,7 +599,17 @@ export default async function Home() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Call Us</p>
-                    <p className="text-gray-600">+91 9874147230</p>
+                    <p className="text-gray-600">+91 9876543210</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 group">
+                  <div className="bg-blue-100 p-3 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
+                    <Mail className="h-6 w-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800">Email</p>
+                    <p className="text-gray-600">ppp.obgy@gmail.com</p>
+                    <p className="text-gray-600">ppp.dnb.in.mumbai@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 group">
@@ -607,8 +617,9 @@ export default async function Home() {
                     <MapPin className="h-6 w-6 text-blue-700" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-800">Visit Us</p>
-                    <p className="text-sm text-gray-600">Kalyani, Nadia, West Bengal</p>
+                    <p className="font-medium text-gray-800">Address</p>
+                    <p className="text-sm text-gray-600">1. Dum Dum, Kolkata, West Bengal, India</p>
+                    <p className="text-sm text-gray-600">2. Kalyani, Nadia, West Bengal, India</p>
                   </div>
                 </div>
               </div>
