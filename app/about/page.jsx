@@ -156,10 +156,17 @@ export default function AboutPage() {
               <Timeline
                 items={[
                   {
-                    year: "2025",
-                    title: "Fellowship in Cosmetic Gynecology",
-                    institution: "Advanced Training Institute",
-                    description: "Specialized training in cosmetic gynecological procedures and aesthetic treatments.",
+                    year: "2015",
+                    title: "MBBS",
+                    institution: "R G Kar Medical College, Kolkata",
+                    description: "Bachelor of Medicine and Bachelor of Surgery from West Bengal University of Health Sciences.",
+                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
+                  },
+                  {
+                    year: "2020",
+                    title: "DNB (Gynecology and Obstetrics)",
+                    institution: "Dr. L H Hiranandani Hospital, Powai, Mumbai",
+                    description: "Postgraduate degree course in obstetrics and gynecology from National Board Examinations.",
                     icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
                   },
                   {
@@ -170,25 +177,11 @@ export default function AboutPage() {
                     icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
                   },
                   {
-                    year: "2020",
-                    title: "DNB (Gynecology and Obstetrics)",
-                    institution: "Dr. L H Hiranandani Hospital, Powai, Mumbai",
-                    description: "Postgraduate specialization in obstetrics and gynecology from National Board Examinations.",
+                    year: "2025",
+                    title: "Fellowship in Cosmetic Gynecology",
+                    institution: "Advanced Training Institute",
+                    description: "Specialized training in cosmetic gynecological procedures and aesthetic treatments.",
                     icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
-                  },
-                  {
-                    year: "2015",
-                    title: "MBBS",
-                    institution: "R G Kar Medical College, Kolkata",
-                    description: "Bachelor of Medicine and Bachelor of Surgery from West Bengal University of Health Sciences.",
-                    icon: <GraduationCap className='h-5 w-5 text-blue-700' />,
-                  },
-                  {
-                    year: "",
-                    title: "Fellowship Certifications",
-                    institution: "Multiple fellowships including Minimal Access Surgery (FMAS) and Cosmetic Gynecology",
-                    description: "Completed",
-                    icon: <GraduationCap className='h-5 w-5 text-green-700' />,
                   },
                   {
                     year: "",
@@ -197,13 +190,7 @@ export default function AboutPage() {
                     description: "Completed",
                     icon: <GraduationCap className='h-5 w-5 text-green-700' />,
                   },
-                  {
-                    year: "",
-                    title: "WBMC Registration",
-                    institution: "West Bengal Medical Council - Registration No: 70044",
-                    description: "Active License",
-                    icon: <Award className='h-5 w-5 text-blue-700' />,
-                  },
+                  // Fellowship Certifications (other) can be omitted or added after if needed
                 ]}
               />
             </div>
