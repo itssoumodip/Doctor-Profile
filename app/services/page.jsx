@@ -70,7 +70,7 @@ export default function ServicesPage() {
               <ServiceCard
                 title="Obstetric Care"
                 description="Comprehensive prenatal, delivery, and postnatal care including management of high-risk pregnancies and obstetric emergencies."
-                icon="Heart"
+                icon="/1.svg"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                 iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -82,7 +82,7 @@ export default function ServicesPage() {
               <ServiceCard
                 title="Gynecological Care"
                 description="Expert diagnosis and treatment of gynecological conditions, preventive screenings, and minimally invasive procedures."
-                icon="Shield"
+                icon="/2.svg"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                 iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"
@@ -94,7 +94,7 @@ export default function ServicesPage() {
               <ServiceCard
                 title="Infertility Management"
                 description="Comprehensive infertility evaluation and treatment including ovulation induction, IUI, and pre-IVF consultations."
-                icon="Activity"
+                icon="/3.svg"
                 detailed
                 className="h-full border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-blue-lg rounded-xl overflow-hidden bg-white backdrop-blur-sm"
                 iconClassName="group-hover:text-white group-hover:bg-gradient-to-r from-blue-600 to-blue-700"

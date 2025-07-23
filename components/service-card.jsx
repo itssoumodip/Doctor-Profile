@@ -26,12 +26,17 @@ export function ServiceCard({ title, description, icon, className = "" }) {
     Droplet: Droplet
   }
 
-  const IconComponent = IconMap[icon] || Heart
+  // Check if icon is a path to an SVG file
+  const isSvgPath = icon?.startsWith('/')
 
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 ${className}`}>
       <div className="rounded-full w-12 h-12 bg-blue-100 flex items-center justify-center mb-4">
-        <IconComponent className="h-6 w-6 text-blue-900" />
+        {isSvgPath ? (
+          <img src={icon} alt={title} className="h-6 w-6" />
+        ) : (
+          (IconMap[icon] || Heart)({ className: "h-6 w-6 text-blue-900" })
+        )}
       </div>
       <h3 className="font-bold text-lg mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
